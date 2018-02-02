@@ -1,0 +1,962 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DTcmsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="dt_article_albums">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="channel_id" Type="int" />
+    <Property Name="article_id" Type="int" />
+    <Property Name="thumb_path" Type="nvarchar" MaxLength="255" />
+    <Property Name="original_path" Type="nvarchar" MaxLength="255" />
+    <Property Name="remark" Type="nvarchar" MaxLength="500" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="dt_article_attach">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="channel_id" Type="int" />
+    <Property Name="article_id" Type="int" />
+    <Property Name="file_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="file_path" Type="nvarchar" MaxLength="255" />
+    <Property Name="file_size" Type="int" />
+    <Property Name="file_ext" Type="nvarchar" MaxLength="20" />
+    <Property Name="down_num" Type="int" />
+    <Property Name="point" Type="int" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="dt_article_attribute_field">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="control_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="data_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="data_length" Type="int" />
+    <Property Name="data_place" Type="tinyint" />
+    <Property Name="item_option" Type="ntext" />
+    <Property Name="default_value" Type="ntext" />
+    <Property Name="is_required" Type="tinyint" />
+    <Property Name="is_password" Type="tinyint" />
+    <Property Name="is_html" Type="tinyint" />
+    <Property Name="editor_type" Type="tinyint" />
+    <Property Name="valid_tip_msg" Type="nvarchar" MaxLength="255" />
+    <Property Name="valid_error_msg" Type="nvarchar" MaxLength="255" />
+    <Property Name="valid_pattern" Type="nvarchar" MaxLength="500" />
+    <Property Name="sort_id" Type="int" />
+    <Property Name="is_sys" Type="tinyint" />
+    <Property Name="is_lock" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="dt_article_category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="site_id" Type="int" />
+    <Property Name="channel_id" Type="int" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="call_index" Type="nvarchar" MaxLength="50" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="class_list" Type="nvarchar" MaxLength="500" />
+    <Property Name="class_layer" Type="int" />
+    <Property Name="sort_id" Type="int" />
+    <Property Name="link_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="img_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="content" Type="ntext" />
+    <Property Name="seo_title" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_keywords" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_description" Type="nvarchar" MaxLength="255" />
+    <Property Name="is_lock" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="dt_article_comment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="site_id" Type="int" />
+    <Property Name="channel_id" Type="int" />
+    <Property Name="article_id" Type="int" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="user_ip" Type="nvarchar" MaxLength="255" />
+    <Property Name="content" Type="ntext" />
+    <Property Name="is_lock" Type="tinyint" />
+    <Property Name="add_time" Type="datetime" />
+    <Property Name="is_reply" Type="tinyint" />
+    <Property Name="reply_content" Type="ntext" />
+    <Property Name="reply_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="dt_article_tags">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="is_red" Type="tinyint" />
+    <Property Name="sort_id" Type="int" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="dt_article_tags_relation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="channel_id" Type="int" />
+    <Property Name="article_id" Type="int" />
+    <Property Name="tag_id" Type="int" />
+  </EntityType>
+  <EntityType Name="dt_channel_article_content">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="site_id" Type="int" Nullable="false" />
+    <Property Name="channel_id" Type="int" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="call_index" Type="nvarchar" MaxLength="50" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="link_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="img_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_title" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_keywords" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_description" Type="nvarchar" MaxLength="255" />
+    <Property Name="tags" Type="nvarchar" MaxLength="500" />
+    <Property Name="zhaiyao" Type="nvarchar" MaxLength="255" />
+    <Property Name="content" Type="ntext" />
+    <Property Name="sort_id" Type="int" Nullable="false" />
+    <Property Name="click" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="is_msg" Type="int" Nullable="false" />
+    <Property Name="is_top" Type="int" Nullable="false" />
+    <Property Name="is_red" Type="int" Nullable="false" />
+    <Property Name="is_hot" Type="int" Nullable="false" />
+    <Property Name="is_slide" Type="int" Nullable="false" />
+    <Property Name="is_sys" Type="int" Nullable="false" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="like_count" Type="int" Nullable="false" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+    <Property Name="update_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="dt_channel_article_down">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="site_id" Type="int" Nullable="false" />
+    <Property Name="channel_id" Type="int" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="call_index" Type="nvarchar" MaxLength="50" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="link_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="img_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_title" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_keywords" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_description" Type="nvarchar" MaxLength="255" />
+    <Property Name="tags" Type="nvarchar" MaxLength="500" />
+    <Property Name="zhaiyao" Type="nvarchar" MaxLength="255" />
+    <Property Name="content" Type="ntext" />
+    <Property Name="sort_id" Type="int" Nullable="false" />
+    <Property Name="click" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="is_msg" Type="int" Nullable="false" />
+    <Property Name="is_top" Type="int" Nullable="false" />
+    <Property Name="is_red" Type="int" Nullable="false" />
+    <Property Name="is_hot" Type="int" Nullable="false" />
+    <Property Name="is_slide" Type="int" Nullable="false" />
+    <Property Name="is_sys" Type="int" Nullable="false" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="like_count" Type="int" Nullable="false" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+    <Property Name="update_time" Type="datetime" />
+    <Property Name="source" Type="nvarchar" MaxLength="50" />
+    <Property Name="author" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="dt_channel_article_goods">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="site_id" Type="int" Nullable="false" />
+    <Property Name="channel_id" Type="int" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="call_index" Type="nvarchar" MaxLength="50" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="link_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="img_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_title" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_keywords" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_description" Type="nvarchar" MaxLength="255" />
+    <Property Name="tags" Type="nvarchar" MaxLength="500" />
+    <Property Name="zhaiyao" Type="nvarchar" MaxLength="255" />
+    <Property Name="content" Type="ntext" />
+    <Property Name="sort_id" Type="int" Nullable="false" />
+    <Property Name="click" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="is_msg" Type="int" Nullable="false" />
+    <Property Name="is_top" Type="int" Nullable="false" />
+    <Property Name="is_red" Type="int" Nullable="false" />
+    <Property Name="is_hot" Type="int" Nullable="false" />
+    <Property Name="is_slide" Type="int" Nullable="false" />
+    <Property Name="is_sys" Type="int" Nullable="false" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="like_count" Type="int" Nullable="false" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+    <Property Name="update_time" Type="datetime" />
+    <Property Name="sub_title" Type="nvarchar" MaxLength="255" />
+    <Property Name="goods_no" Type="nvarchar" MaxLength="100" />
+    <Property Name="stock_quantity" Type="int" />
+    <Property Name="market_price" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="sell_price" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="point" Type="int" />
+  </EntityType>
+  <EntityType Name="dt_channel_article_news">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="site_id" Type="int" Nullable="false" />
+    <Property Name="channel_id" Type="int" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="call_index" Type="nvarchar" MaxLength="50" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="link_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="img_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_title" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_keywords" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_description" Type="nvarchar" MaxLength="255" />
+    <Property Name="tags" Type="nvarchar" MaxLength="500" />
+    <Property Name="zhaiyao" Type="nvarchar" MaxLength="255" />
+    <Property Name="content" Type="ntext" />
+    <Property Name="sort_id" Type="int" Nullable="false" />
+    <Property Name="click" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="is_msg" Type="int" Nullable="false" />
+    <Property Name="is_top" Type="int" Nullable="false" />
+    <Property Name="is_red" Type="int" Nullable="false" />
+    <Property Name="is_hot" Type="int" Nullable="false" />
+    <Property Name="is_slide" Type="int" Nullable="false" />
+    <Property Name="is_sys" Type="int" Nullable="false" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="like_count" Type="int" Nullable="false" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+    <Property Name="update_time" Type="datetime" />
+    <Property Name="source" Type="nvarchar" MaxLength="50" />
+    <Property Name="author" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="dt_channel_article_photo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="site_id" Type="int" Nullable="false" />
+    <Property Name="channel_id" Type="int" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="call_index" Type="nvarchar" MaxLength="50" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="link_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="img_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_title" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_keywords" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_description" Type="nvarchar" MaxLength="255" />
+    <Property Name="tags" Type="nvarchar" MaxLength="500" />
+    <Property Name="zhaiyao" Type="nvarchar" MaxLength="255" />
+    <Property Name="content" Type="ntext" />
+    <Property Name="sort_id" Type="int" Nullable="false" />
+    <Property Name="click" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="is_msg" Type="int" Nullable="false" />
+    <Property Name="is_top" Type="int" Nullable="false" />
+    <Property Name="is_red" Type="int" Nullable="false" />
+    <Property Name="is_hot" Type="int" Nullable="false" />
+    <Property Name="is_slide" Type="int" Nullable="false" />
+    <Property Name="is_sys" Type="int" Nullable="false" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="like_count" Type="int" Nullable="false" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+    <Property Name="update_time" Type="datetime" />
+    <Property Name="source" Type="nvarchar" MaxLength="50" />
+    <Property Name="author" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="dt_channel_article_video">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="site_id" Type="int" Nullable="false" />
+    <Property Name="channel_id" Type="int" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="call_index" Type="nvarchar" MaxLength="50" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="link_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="img_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_title" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_keywords" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_description" Type="nvarchar" MaxLength="255" />
+    <Property Name="tags" Type="nvarchar" MaxLength="500" />
+    <Property Name="zhaiyao" Type="nvarchar" MaxLength="255" />
+    <Property Name="content" Type="ntext" />
+    <Property Name="sort_id" Type="int" Nullable="false" />
+    <Property Name="click" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="is_msg" Type="int" Nullable="false" />
+    <Property Name="is_top" Type="int" Nullable="false" />
+    <Property Name="is_red" Type="int" Nullable="false" />
+    <Property Name="is_hot" Type="int" Nullable="false" />
+    <Property Name="is_slide" Type="int" Nullable="false" />
+    <Property Name="is_sys" Type="int" Nullable="false" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="like_count" Type="int" Nullable="false" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+    <Property Name="update_time" Type="datetime" />
+    <Property Name="video_src" Type="nvarchar" MaxLength="255" />
+    <Property Name="sub_title" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="dt_express">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="express_code" Type="nvarchar" MaxLength="100" />
+    <Property Name="express_fee" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="website" Type="nvarchar" MaxLength="255" />
+    <Property Name="remark" Type="ntext" />
+    <Property Name="sort_id" Type="int" />
+    <Property Name="is_lock" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="dt_feedback">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="site_id" Type="int" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="content" Type="ntext" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_tel" Type="nvarchar" MaxLength="30" />
+    <Property Name="user_qq" Type="nvarchar" MaxLength="30" />
+    <Property Name="user_email" Type="nvarchar" MaxLength="100" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+    <Property Name="reply_content" Type="ntext" />
+    <Property Name="reply_time" Type="datetime" />
+    <Property Name="is_lock" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dt_link">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="site_id" Type="int" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="255" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_tel" Type="nvarchar" MaxLength="20" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="site_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="img_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="is_image" Type="int" Nullable="false" />
+    <Property Name="sort_id" Type="int" Nullable="false" />
+    <Property Name="is_red" Type="tinyint" Nullable="false" />
+    <Property Name="is_lock" Type="tinyint" Nullable="false" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="dt_mail_template">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="call_index" Type="nvarchar" MaxLength="50" />
+    <Property Name="maill_title" Type="nvarchar" MaxLength="100" />
+    <Property Name="content" Type="ntext" />
+    <Property Name="is_sys" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="dt_manager">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="role_id" Type="int" />
+    <Property Name="role_type" Type="int" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="password" Type="nvarchar" MaxLength="100" />
+    <Property Name="salt" Type="nvarchar" MaxLength="20" />
+    <Property Name="avatar" Type="nvarchar" MaxLength="255" />
+    <Property Name="real_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="telephone" Type="nvarchar" MaxLength="30" />
+    <Property Name="email" Type="nvarchar" MaxLength="30" />
+    <Property Name="is_audit" Type="tinyint" />
+    <Property Name="is_lock" Type="int" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="dt_manager_log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="action_type" Type="nvarchar" MaxLength="100" />
+    <Property Name="remark" Type="nvarchar" MaxLength="255" />
+    <Property Name="user_ip" Type="nvarchar" MaxLength="30" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="dt_manager_role">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="role_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="role_type" Type="tinyint" />
+    <Property Name="is_sys" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="dt_manager_role_value">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="role_id" Type="int" />
+    <Property Name="nav_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="action_type" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="dt_navigation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="channel_id" Type="int" />
+    <Property Name="nav_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="sub_title" Type="nvarchar" MaxLength="100" />
+    <Property Name="icon_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="link_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="sort_id" Type="int" />
+    <Property Name="is_lock" Type="tinyint" />
+    <Property Name="remark" Type="nvarchar" MaxLength="500" />
+    <Property Name="action_type" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_sys" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="dt_oauth_app">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="img_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="remark" Type="nvarchar" MaxLength="500" />
+    <Property Name="sort_id" Type="int" />
+    <Property Name="is_lock" Type="tinyint" />
+    <Property Name="api_path" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="dt_order_goods">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="channel_id" Type="int" />
+    <Property Name="article_id" Type="int" />
+    <Property Name="order_id" Type="int" />
+    <Property Name="goods_id" Type="int" />
+    <Property Name="goods_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="goods_title" Type="nvarchar" MaxLength="100" />
+    <Property Name="img_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="goods_price" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="real_price" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="quantity" Type="int" />
+    <Property Name="point" Type="int" />
+  </EntityType>
+  <EntityType Name="dt_orders">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="site_id" Type="int" />
+    <Property Name="order_no" Type="nvarchar" MaxLength="100" />
+    <Property Name="trade_no" Type="nvarchar" MaxLength="100" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="payment_id" Type="int" />
+    <Property Name="payment_fee" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="payment_status" Type="tinyint" />
+    <Property Name="payment_time" Type="datetime" />
+    <Property Name="express_id" Type="int" />
+    <Property Name="express_no" Type="nvarchar" MaxLength="100" />
+    <Property Name="express_fee" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="express_status" Type="tinyint" />
+    <Property Name="express_time" Type="datetime" />
+    <Property Name="accept_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="post_code" Type="nvarchar" MaxLength="20" />
+    <Property Name="telphone" Type="nvarchar" MaxLength="30" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="email" Type="nvarchar" MaxLength="30" />
+    <Property Name="area" Type="nvarchar" MaxLength="100" />
+    <Property Name="address" Type="nvarchar" MaxLength="500" />
+    <Property Name="message" Type="nvarchar" MaxLength="500" />
+    <Property Name="remark" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_invoice" Type="tinyint" />
+    <Property Name="invoice_title" Type="varchar" MaxLength="100" />
+    <Property Name="invoice_taxes" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="payable_amount" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="real_amount" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="order_amount" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="point" Type="int" />
+    <Property Name="status" Type="tinyint" />
+    <Property Name="add_time" Type="datetime" />
+    <Property Name="confirm_time" Type="datetime" />
+    <Property Name="complete_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="dt_payment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="img_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="remark" Type="nvarchar" MaxLength="500" />
+    <Property Name="type" Type="tinyint" />
+    <Property Name="poundage_type" Type="tinyint" />
+    <Property Name="poundage_amount" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="api_path" Type="nvarchar" MaxLength="100" />
+    <Property Name="redirect_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="return_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="notify_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="sort_id" Type="int" />
+    <Property Name="is_lock" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="dt_site_channel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="site_id" Type="int" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="title" Type="varchar" MaxLength="100" />
+    <Property Name="is_comment" Type="tinyint" />
+    <Property Name="is_albums" Type="tinyint" />
+    <Property Name="is_attach" Type="tinyint" />
+    <Property Name="is_spec" Type="tinyint" />
+    <Property Name="is_contribute" Type="tinyint" />
+    <Property Name="sort_id" Type="int" />
+    <Property Name="is_lock" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="dt_site_channel_field">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="channel_id" Type="int" />
+    <Property Name="field_id" Type="int" />
+  </EntityType>
+  <EntityType Name="dt_site_oauth">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="site_id" Type="int" />
+    <Property Name="oauth_id" Type="int" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="app_id" Type="nvarchar" MaxLength="100" />
+    <Property Name="app_key" Type="nvarchar" MaxLength="500" />
+    <Property Name="sort_id" Type="int" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="dt_site_payment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="site_id" Type="int" />
+    <Property Name="payment_id" Type="int" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="key1" Type="nvarchar" MaxLength="100" />
+    <Property Name="key2" Type="nvarchar" MaxLength="100" />
+    <Property Name="key3" Type="nvarchar" MaxLength="100" />
+    <Property Name="key4" Type="nvarchar" MaxLength="100" />
+    <Property Name="sort_id" Type="int" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="dt_sites">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="build_path" Type="nvarchar" MaxLength="100" />
+    <Property Name="templet_path" Type="nvarchar" MaxLength="100" />
+    <Property Name="domain" Type="nvarchar" MaxLength="255" />
+    <Property Name="is_default" Type="tinyint" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" />
+    <Property Name="logo" Type="nvarchar" MaxLength="255" />
+    <Property Name="company" Type="nvarchar" MaxLength="255" />
+    <Property Name="address" Type="nvarchar" MaxLength="255" />
+    <Property Name="tel" Type="nvarchar" MaxLength="30" />
+    <Property Name="fax" Type="nvarchar" MaxLength="30" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="crod" Type="nvarchar" MaxLength="100" />
+    <Property Name="copyright" Type="nvarchar" MaxLength="800" />
+    <Property Name="seo_title" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_keyword" Type="nvarchar" MaxLength="255" />
+    <Property Name="seo_description" Type="nvarchar" MaxLength="500" />
+    <Property Name="sort_id" Type="int" />
+    <Property Name="is_lock" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="dt_sms_template">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="call_index" Type="nvarchar" MaxLength="50" />
+    <Property Name="content" Type="ntext" />
+    <Property Name="is_sys" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="dt_user_addr_book">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="accept_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="area" Type="nvarchar" MaxLength="100" />
+    <Property Name="address" Type="nvarchar" MaxLength="500" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="telphone" Type="nvarchar" MaxLength="30" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="post_code" Type="nvarchar" MaxLength="20" />
+    <Property Name="is_default" Type="tinyint" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="dt_user_amount_log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="value" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="remark" Type="nvarchar" MaxLength="500" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="dt_user_attach_log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="attach_id" Type="int" />
+    <Property Name="file_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="dt_user_code">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="type" Type="nvarchar" MaxLength="20" />
+    <Property Name="str_code" Type="nvarchar" MaxLength="255" />
+    <Property Name="count" Type="int" />
+    <Property Name="status" Type="tinyint" />
+    <Property Name="user_ip" Type="nvarchar" MaxLength="20" />
+    <Property Name="eff_time" Type="datetime" Nullable="false" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dt_user_group_price">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="channel_id" Type="int" />
+    <Property Name="article_id" Type="int" />
+    <Property Name="group_id" Type="int" />
+    <Property Name="price" Type="decimal" Precision="9" Scale="2" />
+  </EntityType>
+  <EntityType Name="dt_user_groups">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="grade" Type="int" />
+    <Property Name="upgrade_exp" Type="int" />
+    <Property Name="amount" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="point" Type="int" />
+    <Property Name="discount" Type="int" />
+    <Property Name="is_default" Type="tinyint" />
+    <Property Name="is_upgrade" Type="tinyint" />
+    <Property Name="is_lock" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="dt_user_login_log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="remark" Type="nvarchar" MaxLength="255" />
+    <Property Name="login_time" Type="datetime" />
+    <Property Name="login_ip" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="dt_user_message">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="tinyint" />
+    <Property Name="post_user_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="accept_user_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="is_read" Type="tinyint" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="content" Type="ntext" />
+    <Property Name="post_time" Type="datetime" Nullable="false" />
+    <Property Name="read_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="dt_user_oauth">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="oauth_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="oauth_access_token" Type="nvarchar" MaxLength="500" />
+    <Property Name="oauth_openid" Type="nvarchar" MaxLength="255" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="dt_user_point_log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="value" Type="int" />
+    <Property Name="remark" Type="nvarchar" MaxLength="500" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="dt_user_recharge">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="recharge_no" Type="nvarchar" MaxLength="100" />
+    <Property Name="payment_id" Type="int" />
+    <Property Name="amount" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="status" Type="tinyint" />
+    <Property Name="add_time" Type="datetime" />
+    <Property Name="complete_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="dt_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="site_id" Type="int" />
+    <Property Name="group_id" Type="int" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="salt" Type="nvarchar" MaxLength="20" />
+    <Property Name="password" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="avatar" Type="nvarchar" MaxLength="255" />
+    <Property Name="nick_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="sex" Type="nvarchar" MaxLength="20" />
+    <Property Name="birthday" Type="datetime" />
+    <Property Name="telphone" Type="nvarchar" MaxLength="50" />
+    <Property Name="area" Type="nvarchar" MaxLength="255" />
+    <Property Name="address" Type="nvarchar" MaxLength="255" />
+    <Property Name="qq" Type="nvarchar" MaxLength="20" />
+    <Property Name="msn" Type="nvarchar" MaxLength="100" />
+    <Property Name="amount" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="point" Type="int" />
+    <Property Name="exp" Type="int" />
+    <Property Name="status" Type="tinyint" />
+    <Property Name="reg_time" Type="datetime" />
+    <Property Name="reg_ip" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="FK_DT_CHANN_REFERENCE_DT_CHANN_FIELD">
+    <End Role="dt_site_channel" Type="Self.dt_site_channel" Multiplicity="0..1" />
+    <End Role="dt_site_channel_field" Type="Self.dt_site_channel_field" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dt_site_channel">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dt_site_channel_field">
+        <PropertyRef Name="channel_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DT_MANAG_REFERENCE_DT_MANAG">
+    <End Role="dt_manager_role" Type="Self.dt_manager_role" Multiplicity="0..1" />
+    <End Role="dt_manager" Type="Self.dt_manager" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dt_manager_role">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dt_manager">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DT_MANAG_REFERENCE_DT_MANAG_ROLE_VALUE">
+    <End Role="dt_manager_role" Type="Self.dt_manager_role" Multiplicity="0..1" />
+    <End Role="dt_manager_role_value" Type="Self.dt_manager_role_value" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dt_manager_role">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dt_manager_role_value">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DT_ORDER_REFERENCE_DT_ORDER">
+    <End Role="dt_orders" Type="Self.dt_orders" Multiplicity="0..1" />
+    <End Role="dt_order_goods" Type="Self.dt_order_goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dt_orders">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dt_order_goods">
+        <PropertyRef Name="order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DT_SITE__REFERENCE_DT_ARTIC">
+    <End Role="dt_article_attribute_field" Type="Self.dt_article_attribute_field" Multiplicity="0..1" />
+    <End Role="dt_site_channel_field" Type="Self.dt_site_channel_field" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dt_article_attribute_field">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dt_site_channel_field">
+        <PropertyRef Name="field_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DT_SITE__REFERENCE_DT_OAUTH">
+    <End Role="dt_oauth_app" Type="Self.dt_oauth_app" Multiplicity="0..1" />
+    <End Role="dt_site_oauth" Type="Self.dt_site_oauth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dt_oauth_app">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dt_site_oauth">
+        <PropertyRef Name="oauth_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DT_SITE__REFERENCE_DT_PAYME">
+    <End Role="dt_payment" Type="Self.dt_payment" Multiplicity="0..1" />
+    <End Role="dt_site_payment" Type="Self.dt_site_payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dt_payment">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dt_site_payment">
+        <PropertyRef Name="payment_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DT_SITE__REFERENCE_DT_SITES">
+    <End Role="dt_sites" Type="Self.dt_sites" Multiplicity="0..1" />
+    <End Role="dt_site_channel" Type="Self.dt_site_channel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dt_sites">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dt_site_channel">
+        <PropertyRef Name="site_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DTcmsDBModelStoreContainer">
+    <EntitySet Name="dt_article_albums" EntityType="Self.dt_article_albums" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_article_attach" EntityType="Self.dt_article_attach" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_article_attribute_field" EntityType="Self.dt_article_attribute_field" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_article_category" EntityType="Self.dt_article_category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_article_comment" EntityType="Self.dt_article_comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_article_tags" EntityType="Self.dt_article_tags" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_article_tags_relation" EntityType="Self.dt_article_tags_relation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_channel_article_content" EntityType="Self.dt_channel_article_content" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_channel_article_down" EntityType="Self.dt_channel_article_down" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_channel_article_goods" EntityType="Self.dt_channel_article_goods" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_channel_article_news" EntityType="Self.dt_channel_article_news" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_channel_article_photo" EntityType="Self.dt_channel_article_photo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_channel_article_video" EntityType="Self.dt_channel_article_video" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_express" EntityType="Self.dt_express" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_feedback" EntityType="Self.dt_feedback" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_link" EntityType="Self.dt_link" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_mail_template" EntityType="Self.dt_mail_template" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_manager" EntityType="Self.dt_manager" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_manager_log" EntityType="Self.dt_manager_log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_manager_role" EntityType="Self.dt_manager_role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_manager_role_value" EntityType="Self.dt_manager_role_value" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_navigation" EntityType="Self.dt_navigation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_oauth_app" EntityType="Self.dt_oauth_app" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_order_goods" EntityType="Self.dt_order_goods" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_orders" EntityType="Self.dt_orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_payment" EntityType="Self.dt_payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_site_channel" EntityType="Self.dt_site_channel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_site_channel_field" EntityType="Self.dt_site_channel_field" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_site_oauth" EntityType="Self.dt_site_oauth" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_site_payment" EntityType="Self.dt_site_payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_sites" EntityType="Self.dt_sites" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_sms_template" EntityType="Self.dt_sms_template" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_user_addr_book" EntityType="Self.dt_user_addr_book" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_user_amount_log" EntityType="Self.dt_user_amount_log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_user_attach_log" EntityType="Self.dt_user_attach_log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_user_code" EntityType="Self.dt_user_code" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_user_group_price" EntityType="Self.dt_user_group_price" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_user_groups" EntityType="Self.dt_user_groups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_user_login_log" EntityType="Self.dt_user_login_log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_user_message" EntityType="Self.dt_user_message" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_user_oauth" EntityType="Self.dt_user_oauth" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_user_point_log" EntityType="Self.dt_user_point_log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_user_recharge" EntityType="Self.dt_user_recharge" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dt_users" EntityType="Self.dt_users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_DT_CHANN_REFERENCE_DT_CHANN_FIELD" Association="Self.FK_DT_CHANN_REFERENCE_DT_CHANN_FIELD">
+      <End Role="dt_site_channel" EntitySet="dt_site_channel" />
+      <End Role="dt_site_channel_field" EntitySet="dt_site_channel_field" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DT_MANAG_REFERENCE_DT_MANAG" Association="Self.FK_DT_MANAG_REFERENCE_DT_MANAG">
+      <End Role="dt_manager_role" EntitySet="dt_manager_role" />
+      <End Role="dt_manager" EntitySet="dt_manager" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DT_MANAG_REFERENCE_DT_MANAG_ROLE_VALUE" Association="Self.FK_DT_MANAG_REFERENCE_DT_MANAG_ROLE_VALUE">
+      <End Role="dt_manager_role" EntitySet="dt_manager_role" />
+      <End Role="dt_manager_role_value" EntitySet="dt_manager_role_value" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DT_ORDER_REFERENCE_DT_ORDER" Association="Self.FK_DT_ORDER_REFERENCE_DT_ORDER">
+      <End Role="dt_orders" EntitySet="dt_orders" />
+      <End Role="dt_order_goods" EntitySet="dt_order_goods" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DT_SITE__REFERENCE_DT_ARTIC" Association="Self.FK_DT_SITE__REFERENCE_DT_ARTIC">
+      <End Role="dt_article_attribute_field" EntitySet="dt_article_attribute_field" />
+      <End Role="dt_site_channel_field" EntitySet="dt_site_channel_field" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DT_SITE__REFERENCE_DT_OAUTH" Association="Self.FK_DT_SITE__REFERENCE_DT_OAUTH">
+      <End Role="dt_oauth_app" EntitySet="dt_oauth_app" />
+      <End Role="dt_site_oauth" EntitySet="dt_site_oauth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DT_SITE__REFERENCE_DT_PAYME" Association="Self.FK_DT_SITE__REFERENCE_DT_PAYME">
+      <End Role="dt_payment" EntitySet="dt_payment" />
+      <End Role="dt_site_payment" EntitySet="dt_site_payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DT_SITE__REFERENCE_DT_SITES" Association="Self.FK_DT_SITE__REFERENCE_DT_SITES">
+      <End Role="dt_sites" EntitySet="dt_sites" />
+      <End Role="dt_site_channel" EntitySet="dt_site_channel" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

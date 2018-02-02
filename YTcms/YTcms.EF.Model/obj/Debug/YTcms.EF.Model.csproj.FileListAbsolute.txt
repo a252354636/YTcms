@@ -1,0 +1,11 @@
+D:\www\test\YTcms\YTcms.EF.Model\bin\Debug\YTcms.EF.Model.dll.config
+D:\www\test\YTcms\YTcms.EF.Model\bin\Debug\YTcms.EF.Model.dll
+D:\www\test\YTcms\YTcms.EF.Model\bin\Debug\YTcms.EF.Model.pdb
+D:\www\test\YTcms\YTcms.EF.Model\bin\Debug\EntityFramework.dll
+D:\www\test\YTcms\YTcms.EF.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\www\test\YTcms\YTcms.EF.Model\bin\Debug\EntityFramework.xml
+D:\www\test\YTcms\YTcms.EF.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\www\test\YTcms\YTcms.EF.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\www\test\YTcms\YTcms.EF.Model\obj\Debug\YTcms.EF.Model.csproj.CoreCompileInputs.cache
+D:\www\test\YTcms\YTcms.EF.Model\obj\Debug\YTcms.EF.Model.dll
+D:\www\test\YTcms\YTcms.EF.Model\obj\Debug\YTcms.EF.Model.pdb

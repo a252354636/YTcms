@@ -1,0 +1,17 @@
+D:\www\test\YTcms\YTcms.DALContainer\bin\Debug\YTcms.DALContainer.dll
+D:\www\test\YTcms\YTcms.DALContainer\bin\Debug\YTcms.DALContainer.pdb
+D:\www\test\YTcms\YTcms.DALContainer\obj\Debug\YTcms.DALContainer.csproj.CoreCompileInputs.cache
+D:\www\test\YTcms\YTcms.DALContainer\obj\Debug\YTcms.DALContainer.dll
+D:\www\test\YTcms\YTcms.DALContainer\obj\Debug\YTcms.DALContainer.pdb
+D:\www\test\YTcms\YTcms.DALContainer\obj\Debug\YTcms.DALContainer.csprojResolveAssemblyReference.cache
+D:\www\test\YTcms\YTcms.DALContainer\bin\Debug\Autofac.dll
+D:\www\test\YTcms\YTcms.DALContainer\bin\Debug\YTcms.DAL.dll
+D:\www\test\YTcms\YTcms.DALContainer\bin\Debug\YTcms.IDAL.dll
+D:\www\test\YTcms\YTcms.DALContainer\bin\Debug\EntityFramework.dll
+D:\www\test\YTcms\YTcms.DALContainer\bin\Debug\YTcms.DAL.pdb
+D:\www\test\YTcms\YTcms.DALContainer\bin\Debug\YTcms.IDAL.pdb
+D:\www\test\YTcms\YTcms.DALContainer\bin\Debug\Autofac.xml
+D:\www\test\YTcms\YTcms.DALContainer\bin\Debug\EntityFramework.xml
+D:\www\test\YTcms\YTcms.DALContainer\bin\Debug\YTcms.EF.Model.dll
+D:\www\test\YTcms\YTcms.DALContainer\bin\Debug\YTcms.EF.Model.pdb
+D:\www\test\YTcms\YTcms.DALContainer\bin\Debug\YTcms.EF.Model.dll.config

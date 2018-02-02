@@ -1,0 +1,12 @@
+D:\www\test\YTcms\YTcms.IDAL\bin\Debug\YTcms.IDAL.dll
+D:\www\test\YTcms\YTcms.IDAL\bin\Debug\YTcms.IDAL.pdb
+D:\www\test\YTcms\YTcms.IDAL\obj\Debug\YTcms.IDAL.csproj.CoreCompileInputs.cache
+D:\www\test\YTcms\YTcms.IDAL\obj\Debug\YTcms.IDAL.dll
+D:\www\test\YTcms\YTcms.IDAL\obj\Debug\YTcms.IDAL.pdb
+D:\www\test\YTcms\YTcms.IDAL\obj\Debug\YTcms.IDAL.csprojResolveAssemblyReference.cache
+D:\www\test\YTcms\YTcms.IDAL\bin\Debug\YTcms.EF.Model.dll
+D:\www\test\YTcms\YTcms.IDAL\bin\Debug\EntityFramework.dll
+D:\www\test\YTcms\YTcms.IDAL\bin\Debug\YTcms.EF.Model.pdb
+D:\www\test\YTcms\YTcms.IDAL\bin\Debug\YTcms.EF.Model.dll.config
+D:\www\test\YTcms\YTcms.IDAL\bin\Debug\EntityFramework.xml
+D:\www\test\YTcms\YTcms.IDAL\bin\Debug\zh-Hans\EntityFramework.resources.dll

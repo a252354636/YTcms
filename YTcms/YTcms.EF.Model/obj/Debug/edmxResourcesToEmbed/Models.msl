@@ -1,0 +1,834 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DTcmsDBModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="dt_article_albums">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_article_albums">
+        <MappingFragment StoreEntitySet="dt_article_albums">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="article_id" ColumnName="article_id" />
+          <ScalarProperty Name="thumb_path" ColumnName="thumb_path" />
+          <ScalarProperty Name="original_path" ColumnName="original_path" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_article_attach">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_article_attach">
+        <MappingFragment StoreEntitySet="dt_article_attach">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="article_id" ColumnName="article_id" />
+          <ScalarProperty Name="file_name" ColumnName="file_name" />
+          <ScalarProperty Name="file_path" ColumnName="file_path" />
+          <ScalarProperty Name="file_size" ColumnName="file_size" />
+          <ScalarProperty Name="file_ext" ColumnName="file_ext" />
+          <ScalarProperty Name="down_num" ColumnName="down_num" />
+          <ScalarProperty Name="point" ColumnName="point" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_article_attribute_field">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_article_attribute_field">
+        <MappingFragment StoreEntitySet="dt_article_attribute_field">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="control_type" ColumnName="control_type" />
+          <ScalarProperty Name="data_type" ColumnName="data_type" />
+          <ScalarProperty Name="data_length" ColumnName="data_length" />
+          <ScalarProperty Name="data_place" ColumnName="data_place" />
+          <ScalarProperty Name="item_option" ColumnName="item_option" />
+          <ScalarProperty Name="default_value" ColumnName="default_value" />
+          <ScalarProperty Name="is_required" ColumnName="is_required" />
+          <ScalarProperty Name="is_password" ColumnName="is_password" />
+          <ScalarProperty Name="is_html" ColumnName="is_html" />
+          <ScalarProperty Name="editor_type" ColumnName="editor_type" />
+          <ScalarProperty Name="valid_tip_msg" ColumnName="valid_tip_msg" />
+          <ScalarProperty Name="valid_error_msg" ColumnName="valid_error_msg" />
+          <ScalarProperty Name="valid_pattern" ColumnName="valid_pattern" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="is_sys" ColumnName="is_sys" />
+          <ScalarProperty Name="is_lock" ColumnName="is_lock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_article_category">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_article_category">
+        <MappingFragment StoreEntitySet="dt_article_category">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="site_id" ColumnName="site_id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="call_index" ColumnName="call_index" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="class_list" ColumnName="class_list" />
+          <ScalarProperty Name="class_layer" ColumnName="class_layer" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="link_url" ColumnName="link_url" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="seo_title" ColumnName="seo_title" />
+          <ScalarProperty Name="seo_keywords" ColumnName="seo_keywords" />
+          <ScalarProperty Name="seo_description" ColumnName="seo_description" />
+          <ScalarProperty Name="is_lock" ColumnName="is_lock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_article_comment">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_article_comment">
+        <MappingFragment StoreEntitySet="dt_article_comment">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="site_id" ColumnName="site_id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="article_id" ColumnName="article_id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="user_ip" ColumnName="user_ip" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="is_lock" ColumnName="is_lock" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="is_reply" ColumnName="is_reply" />
+          <ScalarProperty Name="reply_content" ColumnName="reply_content" />
+          <ScalarProperty Name="reply_time" ColumnName="reply_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_article_tags">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_article_tags">
+        <MappingFragment StoreEntitySet="dt_article_tags">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="is_red" ColumnName="is_red" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_article_tags_relation">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_article_tags_relation">
+        <MappingFragment StoreEntitySet="dt_article_tags_relation">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="article_id" ColumnName="article_id" />
+          <ScalarProperty Name="tag_id" ColumnName="tag_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_channel_article_content">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_channel_article_content">
+        <MappingFragment StoreEntitySet="dt_channel_article_content">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="site_id" ColumnName="site_id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="call_index" ColumnName="call_index" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="link_url" ColumnName="link_url" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="seo_title" ColumnName="seo_title" />
+          <ScalarProperty Name="seo_keywords" ColumnName="seo_keywords" />
+          <ScalarProperty Name="seo_description" ColumnName="seo_description" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="zhaiyao" ColumnName="zhaiyao" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="click" ColumnName="click" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_msg" ColumnName="is_msg" />
+          <ScalarProperty Name="is_top" ColumnName="is_top" />
+          <ScalarProperty Name="is_red" ColumnName="is_red" />
+          <ScalarProperty Name="is_hot" ColumnName="is_hot" />
+          <ScalarProperty Name="is_slide" ColumnName="is_slide" />
+          <ScalarProperty Name="is_sys" ColumnName="is_sys" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="like_count" ColumnName="like_count" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_channel_article_down">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_channel_article_down">
+        <MappingFragment StoreEntitySet="dt_channel_article_down">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="site_id" ColumnName="site_id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="call_index" ColumnName="call_index" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="link_url" ColumnName="link_url" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="seo_title" ColumnName="seo_title" />
+          <ScalarProperty Name="seo_keywords" ColumnName="seo_keywords" />
+          <ScalarProperty Name="seo_description" ColumnName="seo_description" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="zhaiyao" ColumnName="zhaiyao" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="click" ColumnName="click" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_msg" ColumnName="is_msg" />
+          <ScalarProperty Name="is_top" ColumnName="is_top" />
+          <ScalarProperty Name="is_red" ColumnName="is_red" />
+          <ScalarProperty Name="is_hot" ColumnName="is_hot" />
+          <ScalarProperty Name="is_slide" ColumnName="is_slide" />
+          <ScalarProperty Name="is_sys" ColumnName="is_sys" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="like_count" ColumnName="like_count" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="author" ColumnName="author" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_channel_article_goods">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_channel_article_goods">
+        <MappingFragment StoreEntitySet="dt_channel_article_goods">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="site_id" ColumnName="site_id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="call_index" ColumnName="call_index" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="link_url" ColumnName="link_url" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="seo_title" ColumnName="seo_title" />
+          <ScalarProperty Name="seo_keywords" ColumnName="seo_keywords" />
+          <ScalarProperty Name="seo_description" ColumnName="seo_description" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="zhaiyao" ColumnName="zhaiyao" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="click" ColumnName="click" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_msg" ColumnName="is_msg" />
+          <ScalarProperty Name="is_top" ColumnName="is_top" />
+          <ScalarProperty Name="is_red" ColumnName="is_red" />
+          <ScalarProperty Name="is_hot" ColumnName="is_hot" />
+          <ScalarProperty Name="is_slide" ColumnName="is_slide" />
+          <ScalarProperty Name="is_sys" ColumnName="is_sys" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="like_count" ColumnName="like_count" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="sub_title" ColumnName="sub_title" />
+          <ScalarProperty Name="goods_no" ColumnName="goods_no" />
+          <ScalarProperty Name="stock_quantity" ColumnName="stock_quantity" />
+          <ScalarProperty Name="market_price" ColumnName="market_price" />
+          <ScalarProperty Name="sell_price" ColumnName="sell_price" />
+          <ScalarProperty Name="point" ColumnName="point" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_channel_article_news">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_channel_article_news">
+        <MappingFragment StoreEntitySet="dt_channel_article_news">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="site_id" ColumnName="site_id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="call_index" ColumnName="call_index" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="link_url" ColumnName="link_url" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="seo_title" ColumnName="seo_title" />
+          <ScalarProperty Name="seo_keywords" ColumnName="seo_keywords" />
+          <ScalarProperty Name="seo_description" ColumnName="seo_description" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="zhaiyao" ColumnName="zhaiyao" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="click" ColumnName="click" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_msg" ColumnName="is_msg" />
+          <ScalarProperty Name="is_top" ColumnName="is_top" />
+          <ScalarProperty Name="is_red" ColumnName="is_red" />
+          <ScalarProperty Name="is_hot" ColumnName="is_hot" />
+          <ScalarProperty Name="is_slide" ColumnName="is_slide" />
+          <ScalarProperty Name="is_sys" ColumnName="is_sys" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="like_count" ColumnName="like_count" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="author" ColumnName="author" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_channel_article_photo">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_channel_article_photo">
+        <MappingFragment StoreEntitySet="dt_channel_article_photo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="site_id" ColumnName="site_id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="call_index" ColumnName="call_index" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="link_url" ColumnName="link_url" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="seo_title" ColumnName="seo_title" />
+          <ScalarProperty Name="seo_keywords" ColumnName="seo_keywords" />
+          <ScalarProperty Name="seo_description" ColumnName="seo_description" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="zhaiyao" ColumnName="zhaiyao" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="click" ColumnName="click" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_msg" ColumnName="is_msg" />
+          <ScalarProperty Name="is_top" ColumnName="is_top" />
+          <ScalarProperty Name="is_red" ColumnName="is_red" />
+          <ScalarProperty Name="is_hot" ColumnName="is_hot" />
+          <ScalarProperty Name="is_slide" ColumnName="is_slide" />
+          <ScalarProperty Name="is_sys" ColumnName="is_sys" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="like_count" ColumnName="like_count" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="author" ColumnName="author" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_channel_article_video">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_channel_article_video">
+        <MappingFragment StoreEntitySet="dt_channel_article_video">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="site_id" ColumnName="site_id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="call_index" ColumnName="call_index" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="link_url" ColumnName="link_url" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="seo_title" ColumnName="seo_title" />
+          <ScalarProperty Name="seo_keywords" ColumnName="seo_keywords" />
+          <ScalarProperty Name="seo_description" ColumnName="seo_description" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="zhaiyao" ColumnName="zhaiyao" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="click" ColumnName="click" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_msg" ColumnName="is_msg" />
+          <ScalarProperty Name="is_top" ColumnName="is_top" />
+          <ScalarProperty Name="is_red" ColumnName="is_red" />
+          <ScalarProperty Name="is_hot" ColumnName="is_hot" />
+          <ScalarProperty Name="is_slide" ColumnName="is_slide" />
+          <ScalarProperty Name="is_sys" ColumnName="is_sys" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="like_count" ColumnName="like_count" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="video_src" ColumnName="video_src" />
+          <ScalarProperty Name="sub_title" ColumnName="sub_title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_express">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_express">
+        <MappingFragment StoreEntitySet="dt_express">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="express_code" ColumnName="express_code" />
+          <ScalarProperty Name="express_fee" ColumnName="express_fee" />
+          <ScalarProperty Name="website" ColumnName="website" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="is_lock" ColumnName="is_lock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_feedback">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_feedback">
+        <MappingFragment StoreEntitySet="dt_feedback">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="site_id" ColumnName="site_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="user_tel" ColumnName="user_tel" />
+          <ScalarProperty Name="user_qq" ColumnName="user_qq" />
+          <ScalarProperty Name="user_email" ColumnName="user_email" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="reply_content" ColumnName="reply_content" />
+          <ScalarProperty Name="reply_time" ColumnName="reply_time" />
+          <ScalarProperty Name="is_lock" ColumnName="is_lock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_link">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_link">
+        <MappingFragment StoreEntitySet="dt_link">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="site_id" ColumnName="site_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="user_tel" ColumnName="user_tel" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="site_url" ColumnName="site_url" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="is_image" ColumnName="is_image" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="is_red" ColumnName="is_red" />
+          <ScalarProperty Name="is_lock" ColumnName="is_lock" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_mail_template">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_mail_template">
+        <MappingFragment StoreEntitySet="dt_mail_template">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="call_index" ColumnName="call_index" />
+          <ScalarProperty Name="maill_title" ColumnName="maill_title" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="is_sys" ColumnName="is_sys" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_manager">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_manager">
+        <MappingFragment StoreEntitySet="dt_manager">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="role_type" ColumnName="role_type" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="salt" ColumnName="salt" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+          <ScalarProperty Name="real_name" ColumnName="real_name" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="is_audit" ColumnName="is_audit" />
+          <ScalarProperty Name="is_lock" ColumnName="is_lock" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_manager_log">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_manager_log">
+        <MappingFragment StoreEntitySet="dt_manager_log">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="action_type" ColumnName="action_type" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="user_ip" ColumnName="user_ip" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_manager_role">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_manager_role">
+        <MappingFragment StoreEntitySet="dt_manager_role">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="role_name" ColumnName="role_name" />
+          <ScalarProperty Name="role_type" ColumnName="role_type" />
+          <ScalarProperty Name="is_sys" ColumnName="is_sys" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_manager_role_value">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_manager_role_value">
+        <MappingFragment StoreEntitySet="dt_manager_role_value">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="nav_name" ColumnName="nav_name" />
+          <ScalarProperty Name="action_type" ColumnName="action_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_navigation">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_navigation">
+        <MappingFragment StoreEntitySet="dt_navigation">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="nav_type" ColumnName="nav_type" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="sub_title" ColumnName="sub_title" />
+          <ScalarProperty Name="icon_url" ColumnName="icon_url" />
+          <ScalarProperty Name="link_url" ColumnName="link_url" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="is_lock" ColumnName="is_lock" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="action_type" ColumnName="action_type" />
+          <ScalarProperty Name="is_sys" ColumnName="is_sys" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_oauth_app">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_oauth_app">
+        <MappingFragment StoreEntitySet="dt_oauth_app">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="is_lock" ColumnName="is_lock" />
+          <ScalarProperty Name="api_path" ColumnName="api_path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_order_goods">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_order_goods">
+        <MappingFragment StoreEntitySet="dt_order_goods">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="article_id" ColumnName="article_id" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="goods_id" ColumnName="goods_id" />
+          <ScalarProperty Name="goods_no" ColumnName="goods_no" />
+          <ScalarProperty Name="goods_title" ColumnName="goods_title" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="goods_price" ColumnName="goods_price" />
+          <ScalarProperty Name="real_price" ColumnName="real_price" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="point" ColumnName="point" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_orders">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_orders">
+        <MappingFragment StoreEntitySet="dt_orders">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="site_id" ColumnName="site_id" />
+          <ScalarProperty Name="order_no" ColumnName="order_no" />
+          <ScalarProperty Name="trade_no" ColumnName="trade_no" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="payment_id" ColumnName="payment_id" />
+          <ScalarProperty Name="payment_fee" ColumnName="payment_fee" />
+          <ScalarProperty Name="payment_status" ColumnName="payment_status" />
+          <ScalarProperty Name="payment_time" ColumnName="payment_time" />
+          <ScalarProperty Name="express_id" ColumnName="express_id" />
+          <ScalarProperty Name="express_no" ColumnName="express_no" />
+          <ScalarProperty Name="express_fee" ColumnName="express_fee" />
+          <ScalarProperty Name="express_status" ColumnName="express_status" />
+          <ScalarProperty Name="express_time" ColumnName="express_time" />
+          <ScalarProperty Name="accept_name" ColumnName="accept_name" />
+          <ScalarProperty Name="post_code" ColumnName="post_code" />
+          <ScalarProperty Name="telphone" ColumnName="telphone" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="is_invoice" ColumnName="is_invoice" />
+          <ScalarProperty Name="invoice_title" ColumnName="invoice_title" />
+          <ScalarProperty Name="invoice_taxes" ColumnName="invoice_taxes" />
+          <ScalarProperty Name="payable_amount" ColumnName="payable_amount" />
+          <ScalarProperty Name="real_amount" ColumnName="real_amount" />
+          <ScalarProperty Name="order_amount" ColumnName="order_amount" />
+          <ScalarProperty Name="point" ColumnName="point" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="confirm_time" ColumnName="confirm_time" />
+          <ScalarProperty Name="complete_time" ColumnName="complete_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_payment">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_payment">
+        <MappingFragment StoreEntitySet="dt_payment">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="poundage_type" ColumnName="poundage_type" />
+          <ScalarProperty Name="poundage_amount" ColumnName="poundage_amount" />
+          <ScalarProperty Name="api_path" ColumnName="api_path" />
+          <ScalarProperty Name="redirect_url" ColumnName="redirect_url" />
+          <ScalarProperty Name="return_url" ColumnName="return_url" />
+          <ScalarProperty Name="notify_url" ColumnName="notify_url" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="is_lock" ColumnName="is_lock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_site_channel">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_site_channel">
+        <MappingFragment StoreEntitySet="dt_site_channel">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="site_id" ColumnName="site_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="is_comment" ColumnName="is_comment" />
+          <ScalarProperty Name="is_albums" ColumnName="is_albums" />
+          <ScalarProperty Name="is_attach" ColumnName="is_attach" />
+          <ScalarProperty Name="is_spec" ColumnName="is_spec" />
+          <ScalarProperty Name="is_contribute" ColumnName="is_contribute" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="is_lock" ColumnName="is_lock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_site_channel_field">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_site_channel_field">
+        <MappingFragment StoreEntitySet="dt_site_channel_field">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="field_id" ColumnName="field_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_site_oauth">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_site_oauth">
+        <MappingFragment StoreEntitySet="dt_site_oauth">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="site_id" ColumnName="site_id" />
+          <ScalarProperty Name="oauth_id" ColumnName="oauth_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="app_id" ColumnName="app_id" />
+          <ScalarProperty Name="app_key" ColumnName="app_key" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_site_payment">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_site_payment">
+        <MappingFragment StoreEntitySet="dt_site_payment">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="site_id" ColumnName="site_id" />
+          <ScalarProperty Name="payment_id" ColumnName="payment_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="key1" ColumnName="key1" />
+          <ScalarProperty Name="key2" ColumnName="key2" />
+          <ScalarProperty Name="key3" ColumnName="key3" />
+          <ScalarProperty Name="key4" ColumnName="key4" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_sites">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_sites">
+        <MappingFragment StoreEntitySet="dt_sites">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="build_path" ColumnName="build_path" />
+          <ScalarProperty Name="templet_path" ColumnName="templet_path" />
+          <ScalarProperty Name="domain" ColumnName="domain" />
+          <ScalarProperty Name="is_default" ColumnName="is_default" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="crod" ColumnName="crod" />
+          <ScalarProperty Name="copyright" ColumnName="copyright" />
+          <ScalarProperty Name="seo_title" ColumnName="seo_title" />
+          <ScalarProperty Name="seo_keyword" ColumnName="seo_keyword" />
+          <ScalarProperty Name="seo_description" ColumnName="seo_description" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="is_lock" ColumnName="is_lock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_sms_template">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_sms_template">
+        <MappingFragment StoreEntitySet="dt_sms_template">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="call_index" ColumnName="call_index" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="is_sys" ColumnName="is_sys" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_user_addr_book">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_addr_book">
+        <MappingFragment StoreEntitySet="dt_user_addr_book">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="accept_name" ColumnName="accept_name" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="telphone" ColumnName="telphone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="post_code" ColumnName="post_code" />
+          <ScalarProperty Name="is_default" ColumnName="is_default" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_user_amount_log">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_amount_log">
+        <MappingFragment StoreEntitySet="dt_user_amount_log">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_user_attach_log">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_attach_log">
+        <MappingFragment StoreEntitySet="dt_user_attach_log">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="attach_id" ColumnName="attach_id" />
+          <ScalarProperty Name="file_name" ColumnName="file_name" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_user_code">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_code">
+        <MappingFragment StoreEntitySet="dt_user_code">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="str_code" ColumnName="str_code" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="user_ip" ColumnName="user_ip" />
+          <ScalarProperty Name="eff_time" ColumnName="eff_time" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_user_group_price">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_group_price">
+        <MappingFragment StoreEntitySet="dt_user_group_price">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="article_id" ColumnName="article_id" />
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_user_groups">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_groups">
+        <MappingFragment StoreEntitySet="dt_user_groups">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="grade" ColumnName="grade" />
+          <ScalarProperty Name="upgrade_exp" ColumnName="upgrade_exp" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="point" ColumnName="point" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="is_default" ColumnName="is_default" />
+          <ScalarProperty Name="is_upgrade" ColumnName="is_upgrade" />
+          <ScalarProperty Name="is_lock" ColumnName="is_lock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_user_login_log">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_login_log">
+        <MappingFragment StoreEntitySet="dt_user_login_log">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="login_time" ColumnName="login_time" />
+          <ScalarProperty Name="login_ip" ColumnName="login_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_user_message">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_message">
+        <MappingFragment StoreEntitySet="dt_user_message">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="post_user_name" ColumnName="post_user_name" />
+          <ScalarProperty Name="accept_user_name" ColumnName="accept_user_name" />
+          <ScalarProperty Name="is_read" ColumnName="is_read" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="post_time" ColumnName="post_time" />
+          <ScalarProperty Name="read_time" ColumnName="read_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_user_oauth">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_oauth">
+        <MappingFragment StoreEntitySet="dt_user_oauth">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="oauth_name" ColumnName="oauth_name" />
+          <ScalarProperty Name="oauth_access_token" ColumnName="oauth_access_token" />
+          <ScalarProperty Name="oauth_openid" ColumnName="oauth_openid" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_user_point_log">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_point_log">
+        <MappingFragment StoreEntitySet="dt_user_point_log">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_user_recharge">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_recharge">
+        <MappingFragment StoreEntitySet="dt_user_recharge">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="recharge_no" ColumnName="recharge_no" />
+          <ScalarProperty Name="payment_id" ColumnName="payment_id" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="complete_time" ColumnName="complete_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_users">
+      <EntityTypeMapping TypeName="DTcmsDBModel.dt_users">
+        <MappingFragment StoreEntitySet="dt_users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="site_id" ColumnName="site_id" />
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="salt" ColumnName="salt" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+          <ScalarProperty Name="nick_name" ColumnName="nick_name" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="telphone" ColumnName="telphone" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="qq" ColumnName="qq" />
+          <ScalarProperty Name="msn" ColumnName="msn" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="point" ColumnName="point" />
+          <ScalarProperty Name="exp" ColumnName="exp" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="reg_time" ColumnName="reg_time" />
+          <ScalarProperty Name="reg_ip" ColumnName="reg_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

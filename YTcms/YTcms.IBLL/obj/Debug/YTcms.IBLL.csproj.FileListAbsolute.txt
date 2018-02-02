@@ -1,0 +1,12 @@
+D:\www\test\YTcms\YTcms.IBLL\bin\Debug\YTcms.IBLL.dll
+D:\www\test\YTcms\YTcms.IBLL\bin\Debug\YTcms.IBLL.pdb
+D:\www\test\YTcms\YTcms.IBLL\obj\Debug\YTcms.IBLL.csproj.CoreCompileInputs.cache
+D:\www\test\YTcms\YTcms.IBLL\obj\Debug\YTcms.IBLL.dll
+D:\www\test\YTcms\YTcms.IBLL\obj\Debug\YTcms.IBLL.pdb
+D:\www\test\YTcms\YTcms.IBLL\obj\Debug\YTcms.IBLL.csprojResolveAssemblyReference.cache
+D:\www\test\YTcms\YTcms.IBLL\bin\Debug\YTcms.EF.Model.dll
+D:\www\test\YTcms\YTcms.IBLL\bin\Debug\EntityFramework.dll
+D:\www\test\YTcms\YTcms.IBLL\bin\Debug\YTcms.EF.Model.pdb
+D:\www\test\YTcms\YTcms.IBLL\bin\Debug\YTcms.EF.Model.dll.config
+D:\www\test\YTcms\YTcms.IBLL\bin\Debug\EntityFramework.xml
+D:\www\test\YTcms\YTcms.IBLL\bin\Debug\zh-Hans\EntityFramework.resources.dll

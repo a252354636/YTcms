@@ -1,0 +1,15 @@
+D:\www\test\YTcms\YTcms.DAL\bin\Debug\YTcms.DAL.dll
+D:\www\test\YTcms\YTcms.DAL\bin\Debug\YTcms.DAL.pdb
+D:\www\test\YTcms\YTcms.DAL\obj\Debug\YTcms.DAL.csprojResolveAssemblyReference.cache
+D:\www\test\YTcms\YTcms.DAL\obj\Debug\YTcms.DAL.csproj.CoreCompileInputs.cache
+D:\www\test\YTcms\YTcms.DAL\obj\Debug\YTcms.DAL.dll
+D:\www\test\YTcms\YTcms.DAL\obj\Debug\YTcms.DAL.pdb
+D:\www\test\YTcms\YTcms.DAL\bin\Debug\EntityFramework.dll
+D:\www\test\YTcms\YTcms.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\www\test\YTcms\YTcms.DAL\bin\Debug\YTcms.IDAL.dll
+D:\www\test\YTcms\YTcms.DAL\bin\Debug\YTcms.IDAL.pdb
+D:\www\test\YTcms\YTcms.DAL\bin\Debug\EntityFramework.xml
+D:\www\test\YTcms\YTcms.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\www\test\YTcms\YTcms.DAL\bin\Debug\YTcms.EF.Model.dll
+D:\www\test\YTcms\YTcms.DAL\bin\Debug\YTcms.EF.Model.pdb
+D:\www\test\YTcms\YTcms.DAL\bin\Debug\YTcms.EF.Model.dll.config

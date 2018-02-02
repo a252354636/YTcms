@@ -1,0 +1,978 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DTcmsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="dt_article_albums">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="channel_id" Type="Int32" />
+    <Property Name="article_id" Type="Int32" />
+    <Property Name="thumb_path" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="original_path" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="dt_article_attach">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="channel_id" Type="Int32" />
+    <Property Name="article_id" Type="Int32" />
+    <Property Name="file_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="file_path" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="file_size" Type="Int32" />
+    <Property Name="file_ext" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="down_num" Type="Int32" />
+    <Property Name="point" Type="Int32" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="dt_article_attribute_field">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="control_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="data_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="data_length" Type="Int32" />
+    <Property Name="data_place" Type="Byte" />
+    <Property Name="item_option" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="default_value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="is_required" Type="Byte" />
+    <Property Name="is_password" Type="Byte" />
+    <Property Name="is_html" Type="Byte" />
+    <Property Name="editor_type" Type="Byte" />
+    <Property Name="valid_tip_msg" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="valid_error_msg" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="valid_pattern" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="sort_id" Type="Int32" />
+    <Property Name="is_sys" Type="Byte" />
+    <Property Name="is_lock" Type="Byte" />
+    <NavigationProperty Name="dt_site_channel_field" Relationship="Self.FK_DT_SITE__REFERENCE_DT_ARTIC" FromRole="dt_article_attribute_field" ToRole="dt_site_channel_field" />
+  </EntityType>
+  <EntityType Name="dt_article_category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="site_id" Type="Int32" />
+    <Property Name="channel_id" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="call_index" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="parent_id" Type="Int32" />
+    <Property Name="class_list" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="class_layer" Type="Int32" />
+    <Property Name="sort_id" Type="Int32" />
+    <Property Name="link_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="img_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="seo_title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_keywords" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="is_lock" Type="Byte" />
+  </EntityType>
+  <EntityType Name="dt_article_comment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="site_id" Type="Int32" />
+    <Property Name="channel_id" Type="Int32" />
+    <Property Name="article_id" Type="Int32" />
+    <Property Name="parent_id" Type="Int32" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="user_ip" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="is_lock" Type="Byte" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+    <Property Name="is_reply" Type="Byte" />
+    <Property Name="reply_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="reply_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="dt_article_tags">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="is_red" Type="Byte" />
+    <Property Name="sort_id" Type="Int32" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="dt_article_tags_relation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="channel_id" Type="Int32" />
+    <Property Name="article_id" Type="Int32" />
+    <Property Name="tag_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="dt_channel_article_content">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="site_id" Type="Int32" Nullable="false" />
+    <Property Name="channel_id" Type="Int32" Nullable="false" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+    <Property Name="call_index" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="link_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="img_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_keywords" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="tags" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="zhaiyao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sort_id" Type="Int32" Nullable="false" />
+    <Property Name="click" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="is_msg" Type="Int32" Nullable="false" />
+    <Property Name="is_top" Type="Int32" Nullable="false" />
+    <Property Name="is_red" Type="Int32" Nullable="false" />
+    <Property Name="is_hot" Type="Int32" Nullable="false" />
+    <Property Name="is_slide" Type="Int32" Nullable="false" />
+    <Property Name="is_sys" Type="Int32" Nullable="false" />
+    <Property Name="user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="like_count" Type="Int32" Nullable="false" />
+    <Property Name="add_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="update_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="dt_channel_article_down">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="site_id" Type="Int32" Nullable="false" />
+    <Property Name="channel_id" Type="Int32" Nullable="false" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+    <Property Name="call_index" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="link_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="img_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_keywords" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="tags" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="zhaiyao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sort_id" Type="Int32" Nullable="false" />
+    <Property Name="click" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="is_msg" Type="Int32" Nullable="false" />
+    <Property Name="is_top" Type="Int32" Nullable="false" />
+    <Property Name="is_red" Type="Int32" Nullable="false" />
+    <Property Name="is_hot" Type="Int32" Nullable="false" />
+    <Property Name="is_slide" Type="Int32" Nullable="false" />
+    <Property Name="is_sys" Type="Int32" Nullable="false" />
+    <Property Name="user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="like_count" Type="Int32" Nullable="false" />
+    <Property Name="add_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="update_time" Type="DateTime" Precision="3" />
+    <Property Name="source" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="dt_channel_article_goods">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="site_id" Type="Int32" Nullable="false" />
+    <Property Name="channel_id" Type="Int32" Nullable="false" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+    <Property Name="call_index" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="link_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="img_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_keywords" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="tags" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="zhaiyao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sort_id" Type="Int32" Nullable="false" />
+    <Property Name="click" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="is_msg" Type="Int32" Nullable="false" />
+    <Property Name="is_top" Type="Int32" Nullable="false" />
+    <Property Name="is_red" Type="Int32" Nullable="false" />
+    <Property Name="is_hot" Type="Int32" Nullable="false" />
+    <Property Name="is_slide" Type="Int32" Nullable="false" />
+    <Property Name="is_sys" Type="Int32" Nullable="false" />
+    <Property Name="user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="like_count" Type="Int32" Nullable="false" />
+    <Property Name="add_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="update_time" Type="DateTime" Precision="3" />
+    <Property Name="sub_title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="goods_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="stock_quantity" Type="Int32" />
+    <Property Name="market_price" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="sell_price" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="point" Type="Int32" />
+  </EntityType>
+  <EntityType Name="dt_channel_article_news">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="site_id" Type="Int32" Nullable="false" />
+    <Property Name="channel_id" Type="Int32" Nullable="false" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+    <Property Name="call_index" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="link_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="img_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_keywords" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="tags" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="zhaiyao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sort_id" Type="Int32" Nullable="false" />
+    <Property Name="click" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="is_msg" Type="Int32" Nullable="false" />
+    <Property Name="is_top" Type="Int32" Nullable="false" />
+    <Property Name="is_red" Type="Int32" Nullable="false" />
+    <Property Name="is_hot" Type="Int32" Nullable="false" />
+    <Property Name="is_slide" Type="Int32" Nullable="false" />
+    <Property Name="is_sys" Type="Int32" Nullable="false" />
+    <Property Name="user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="like_count" Type="Int32" Nullable="false" />
+    <Property Name="add_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="update_time" Type="DateTime" Precision="3" />
+    <Property Name="source" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="dt_channel_article_photo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="site_id" Type="Int32" Nullable="false" />
+    <Property Name="channel_id" Type="Int32" Nullable="false" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+    <Property Name="call_index" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="link_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="img_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_keywords" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="tags" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="zhaiyao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sort_id" Type="Int32" Nullable="false" />
+    <Property Name="click" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="is_msg" Type="Int32" Nullable="false" />
+    <Property Name="is_top" Type="Int32" Nullable="false" />
+    <Property Name="is_red" Type="Int32" Nullable="false" />
+    <Property Name="is_hot" Type="Int32" Nullable="false" />
+    <Property Name="is_slide" Type="Int32" Nullable="false" />
+    <Property Name="is_sys" Type="Int32" Nullable="false" />
+    <Property Name="user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="like_count" Type="Int32" Nullable="false" />
+    <Property Name="add_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="update_time" Type="DateTime" Precision="3" />
+    <Property Name="source" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="dt_channel_article_video">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="site_id" Type="Int32" Nullable="false" />
+    <Property Name="channel_id" Type="Int32" Nullable="false" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+    <Property Name="call_index" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="link_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="img_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_keywords" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="tags" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="zhaiyao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sort_id" Type="Int32" Nullable="false" />
+    <Property Name="click" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="is_msg" Type="Int32" Nullable="false" />
+    <Property Name="is_top" Type="Int32" Nullable="false" />
+    <Property Name="is_red" Type="Int32" Nullable="false" />
+    <Property Name="is_hot" Type="Int32" Nullable="false" />
+    <Property Name="is_slide" Type="Int32" Nullable="false" />
+    <Property Name="is_sys" Type="Int32" Nullable="false" />
+    <Property Name="user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="like_count" Type="Int32" Nullable="false" />
+    <Property Name="add_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="update_time" Type="DateTime" Precision="3" />
+    <Property Name="video_src" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="sub_title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="dt_express">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="express_code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="express_fee" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="website" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sort_id" Type="Int32" />
+    <Property Name="is_lock" Type="Byte" />
+  </EntityType>
+  <EntityType Name="dt_feedback">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="site_id" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_tel" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="user_qq" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="user_email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="add_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="reply_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="reply_time" Type="DateTime" Precision="3" />
+    <Property Name="is_lock" Type="Byte" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dt_link">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="site_id" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_tel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="site_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="img_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="is_image" Type="Int32" Nullable="false" />
+    <Property Name="sort_id" Type="Int32" Nullable="false" />
+    <Property Name="is_red" Type="Byte" Nullable="false" />
+    <Property Name="is_lock" Type="Byte" Nullable="false" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="dt_mail_template">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="call_index" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="maill_title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="is_sys" Type="Byte" />
+  </EntityType>
+  <EntityType Name="dt_manager">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="role_id" Type="Int32" />
+    <Property Name="role_type" Type="Int32" />
+    <Property Name="user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="salt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="avatar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="real_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="telephone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="is_audit" Type="Byte" />
+    <Property Name="is_lock" Type="Int32" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="dt_manager_role" Relationship="Self.FK_DT_MANAG_REFERENCE_DT_MANAG" FromRole="dt_manager" ToRole="dt_manager_role" />
+  </EntityType>
+  <EntityType Name="dt_manager_log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="action_type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="user_ip" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="dt_manager_role">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="role_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="role_type" Type="Byte" />
+    <Property Name="is_sys" Type="Byte" />
+    <NavigationProperty Name="dt_manager" Relationship="Self.FK_DT_MANAG_REFERENCE_DT_MANAG" FromRole="dt_manager_role" ToRole="dt_manager" />
+    <NavigationProperty Name="dt_manager_role_value" Relationship="Self.FK_DT_MANAG_REFERENCE_DT_MANAG_ROLE_VALUE" FromRole="dt_manager_role" ToRole="dt_manager_role_value" />
+  </EntityType>
+  <EntityType Name="dt_manager_role_value">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="role_id" Type="Int32" />
+    <Property Name="nav_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="action_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="dt_manager_role" Relationship="Self.FK_DT_MANAG_REFERENCE_DT_MANAG_ROLE_VALUE" FromRole="dt_manager_role_value" ToRole="dt_manager_role" />
+  </EntityType>
+  <EntityType Name="dt_navigation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="parent_id" Type="Int32" />
+    <Property Name="channel_id" Type="Int32" />
+    <Property Name="nav_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="sub_title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="icon_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="link_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="sort_id" Type="Int32" />
+    <Property Name="is_lock" Type="Byte" />
+    <Property Name="remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="action_type" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="is_sys" Type="Byte" />
+  </EntityType>
+  <EntityType Name="dt_oauth_app">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="img_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="sort_id" Type="Int32" />
+    <Property Name="is_lock" Type="Byte" />
+    <Property Name="api_path" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="dt_site_oauth" Relationship="Self.FK_DT_SITE__REFERENCE_DT_OAUTH" FromRole="dt_oauth_app" ToRole="dt_site_oauth" />
+  </EntityType>
+  <EntityType Name="dt_order_goods">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="channel_id" Type="Int32" />
+    <Property Name="article_id" Type="Int32" />
+    <Property Name="order_id" Type="Int32" />
+    <Property Name="goods_id" Type="Int32" />
+    <Property Name="goods_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="goods_title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="img_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="goods_price" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="real_price" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="point" Type="Int32" />
+    <NavigationProperty Name="dt_orders" Relationship="Self.FK_DT_ORDER_REFERENCE_DT_ORDER" FromRole="dt_order_goods" ToRole="dt_orders" />
+  </EntityType>
+  <EntityType Name="dt_orders">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="site_id" Type="Int32" />
+    <Property Name="order_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="trade_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="payment_id" Type="Int32" />
+    <Property Name="payment_fee" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="payment_status" Type="Byte" />
+    <Property Name="payment_time" Type="DateTime" Precision="3" />
+    <Property Name="express_id" Type="Int32" />
+    <Property Name="express_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="express_fee" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="express_status" Type="Byte" />
+    <Property Name="express_time" Type="DateTime" Precision="3" />
+    <Property Name="accept_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="post_code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="telphone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="area" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="message" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="is_invoice" Type="Byte" />
+    <Property Name="invoice_title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="invoice_taxes" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="payable_amount" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="real_amount" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="order_amount" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="point" Type="Int32" />
+    <Property Name="status" Type="Byte" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+    <Property Name="confirm_time" Type="DateTime" Precision="3" />
+    <Property Name="complete_time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="dt_order_goods" Relationship="Self.FK_DT_ORDER_REFERENCE_DT_ORDER" FromRole="dt_orders" ToRole="dt_order_goods" />
+  </EntityType>
+  <EntityType Name="dt_payment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="img_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Byte" />
+    <Property Name="poundage_type" Type="Byte" />
+    <Property Name="poundage_amount" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="api_path" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="redirect_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="return_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="notify_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="sort_id" Type="Int32" />
+    <Property Name="is_lock" Type="Byte" />
+    <NavigationProperty Name="dt_site_payment" Relationship="Self.FK_DT_SITE__REFERENCE_DT_PAYME" FromRole="dt_payment" ToRole="dt_site_payment" />
+  </EntityType>
+  <EntityType Name="dt_site_channel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="site_id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="is_comment" Type="Byte" />
+    <Property Name="is_albums" Type="Byte" />
+    <Property Name="is_attach" Type="Byte" />
+    <Property Name="is_spec" Type="Byte" />
+    <Property Name="is_contribute" Type="Byte" />
+    <Property Name="sort_id" Type="Int32" />
+    <Property Name="is_lock" Type="Byte" />
+    <NavigationProperty Name="dt_site_channel_field" Relationship="Self.FK_DT_CHANN_REFERENCE_DT_CHANN_FIELD" FromRole="dt_site_channel" ToRole="dt_site_channel_field" />
+    <NavigationProperty Name="dt_sites" Relationship="Self.FK_DT_SITE__REFERENCE_DT_SITES" FromRole="dt_site_channel" ToRole="dt_sites" />
+  </EntityType>
+  <EntityType Name="dt_site_channel_field">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="channel_id" Type="Int32" />
+    <Property Name="field_id" Type="Int32" />
+    <NavigationProperty Name="dt_article_attribute_field" Relationship="Self.FK_DT_SITE__REFERENCE_DT_ARTIC" FromRole="dt_site_channel_field" ToRole="dt_article_attribute_field" />
+    <NavigationProperty Name="dt_site_channel" Relationship="Self.FK_DT_CHANN_REFERENCE_DT_CHANN_FIELD" FromRole="dt_site_channel_field" ToRole="dt_site_channel" />
+  </EntityType>
+  <EntityType Name="dt_site_oauth">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="site_id" Type="Int32" />
+    <Property Name="oauth_id" Type="Int32" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="app_id" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="app_key" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="sort_id" Type="Int32" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="dt_oauth_app" Relationship="Self.FK_DT_SITE__REFERENCE_DT_OAUTH" FromRole="dt_site_oauth" ToRole="dt_oauth_app" />
+  </EntityType>
+  <EntityType Name="dt_site_payment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="site_id" Type="Int32" />
+    <Property Name="payment_id" Type="Int32" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="key1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="key2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="key3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="key4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="sort_id" Type="Int32" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="dt_payment" Relationship="Self.FK_DT_SITE__REFERENCE_DT_PAYME" FromRole="dt_site_payment" ToRole="dt_payment" />
+  </EntityType>
+  <EntityType Name="dt_sites">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="build_path" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="templet_path" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="domain" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="is_default" Type="Byte" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="logo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="company" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="tel" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="fax" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="crod" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="copyright" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+    <Property Name="seo_title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_keyword" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="seo_description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="sort_id" Type="Int32" />
+    <Property Name="is_lock" Type="Byte" />
+    <NavigationProperty Name="dt_site_channel" Relationship="Self.FK_DT_SITE__REFERENCE_DT_SITES" FromRole="dt_sites" ToRole="dt_site_channel" />
+  </EntityType>
+  <EntityType Name="dt_sms_template">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="call_index" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="is_sys" Type="Byte" />
+  </EntityType>
+  <EntityType Name="dt_user_addr_book">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="accept_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="area" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="telphone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="post_code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="is_default" Type="Byte" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="dt_user_amount_log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="dt_user_attach_log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="attach_id" Type="Int32" />
+    <Property Name="file_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="dt_user_code">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="str_code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="count" Type="Int32" />
+    <Property Name="status" Type="Byte" />
+    <Property Name="user_ip" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="eff_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="add_time" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="dt_user_group_price">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="channel_id" Type="Int32" />
+    <Property Name="article_id" Type="Int32" />
+    <Property Name="group_id" Type="Int32" />
+    <Property Name="price" Type="Decimal" Precision="9" Scale="2" />
+  </EntityType>
+  <EntityType Name="dt_user_groups">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="grade" Type="Int32" />
+    <Property Name="upgrade_exp" Type="Int32" />
+    <Property Name="amount" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="point" Type="Int32" />
+    <Property Name="discount" Type="Int32" />
+    <Property Name="is_default" Type="Byte" />
+    <Property Name="is_upgrade" Type="Byte" />
+    <Property Name="is_lock" Type="Byte" />
+  </EntityType>
+  <EntityType Name="dt_user_login_log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="login_time" Type="DateTime" Precision="3" />
+    <Property Name="login_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="dt_user_message">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="Byte" />
+    <Property Name="post_user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="accept_user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="is_read" Type="Byte" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="post_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="read_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="dt_user_oauth">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="oauth_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="oauth_access_token" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="oauth_openid" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="dt_user_point_log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="Int32" />
+    <Property Name="remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="dt_user_recharge">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="recharge_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="payment_id" Type="Int32" />
+    <Property Name="amount" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="status" Type="Byte" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+    <Property Name="complete_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="dt_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="site_id" Type="Int32" />
+    <Property Name="group_id" Type="Int32" />
+    <Property Name="user_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="salt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="avatar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="nick_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="sex" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="birthday" Type="DateTime" Precision="3" />
+    <Property Name="telphone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="area" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="qq" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="msn" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="amount" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="point" Type="Int32" />
+    <Property Name="exp" Type="Int32" />
+    <Property Name="status" Type="Byte" />
+    <Property Name="reg_time" Type="DateTime" Precision="3" />
+    <Property Name="reg_ip" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_DT_SITE__REFERENCE_DT_ARTIC">
+    <End Role="dt_article_attribute_field" Type="Self.dt_article_attribute_field" Multiplicity="0..1" />
+    <End Role="dt_site_channel_field" Type="Self.dt_site_channel_field" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dt_article_attribute_field">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dt_site_channel_field">
+        <PropertyRef Name="field_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DT_MANAG_REFERENCE_DT_MANAG">
+    <End Role="dt_manager_role" Type="Self.dt_manager_role" Multiplicity="0..1" />
+    <End Role="dt_manager" Type="Self.dt_manager" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dt_manager_role">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dt_manager">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DT_MANAG_REFERENCE_DT_MANAG_ROLE_VALUE">
+    <End Role="dt_manager_role" Type="Self.dt_manager_role" Multiplicity="0..1" />
+    <End Role="dt_manager_role_value" Type="Self.dt_manager_role_value" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dt_manager_role">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dt_manager_role_value">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DT_SITE__REFERENCE_DT_OAUTH">
+    <End Role="dt_oauth_app" Type="Self.dt_oauth_app" Multiplicity="0..1" />
+    <End Role="dt_site_oauth" Type="Self.dt_site_oauth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dt_oauth_app">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dt_site_oauth">
+        <PropertyRef Name="oauth_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DT_ORDER_REFERENCE_DT_ORDER">
+    <End Role="dt_orders" Type="Self.dt_orders" Multiplicity="0..1" />
+    <End Role="dt_order_goods" Type="Self.dt_order_goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dt_orders">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dt_order_goods">
+        <PropertyRef Name="order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DT_SITE__REFERENCE_DT_PAYME">
+    <End Role="dt_payment" Type="Self.dt_payment" Multiplicity="0..1" />
+    <End Role="dt_site_payment" Type="Self.dt_site_payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dt_payment">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dt_site_payment">
+        <PropertyRef Name="payment_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DT_CHANN_REFERENCE_DT_CHANN_FIELD">
+    <End Role="dt_site_channel" Type="Self.dt_site_channel" Multiplicity="0..1" />
+    <End Role="dt_site_channel_field" Type="Self.dt_site_channel_field" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dt_site_channel">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dt_site_channel_field">
+        <PropertyRef Name="channel_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DT_SITE__REFERENCE_DT_SITES">
+    <End Role="dt_sites" Type="Self.dt_sites" Multiplicity="0..1" />
+    <End Role="dt_site_channel" Type="Self.dt_site_channel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dt_sites">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dt_site_channel">
+        <PropertyRef Name="site_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="dt_article_albums" EntityType="Self.dt_article_albums" />
+    <EntitySet Name="dt_article_attach" EntityType="Self.dt_article_attach" />
+    <EntitySet Name="dt_article_attribute_field" EntityType="Self.dt_article_attribute_field" />
+    <EntitySet Name="dt_article_category" EntityType="Self.dt_article_category" />
+    <EntitySet Name="dt_article_comment" EntityType="Self.dt_article_comment" />
+    <EntitySet Name="dt_article_tags" EntityType="Self.dt_article_tags" />
+    <EntitySet Name="dt_article_tags_relation" EntityType="Self.dt_article_tags_relation" />
+    <EntitySet Name="dt_channel_article_content" EntityType="Self.dt_channel_article_content" />
+    <EntitySet Name="dt_channel_article_down" EntityType="Self.dt_channel_article_down" />
+    <EntitySet Name="dt_channel_article_goods" EntityType="Self.dt_channel_article_goods" />
+    <EntitySet Name="dt_channel_article_news" EntityType="Self.dt_channel_article_news" />
+    <EntitySet Name="dt_channel_article_photo" EntityType="Self.dt_channel_article_photo" />
+    <EntitySet Name="dt_channel_article_video" EntityType="Self.dt_channel_article_video" />
+    <EntitySet Name="dt_express" EntityType="Self.dt_express" />
+    <EntitySet Name="dt_feedback" EntityType="Self.dt_feedback" />
+    <EntitySet Name="dt_link" EntityType="Self.dt_link" />
+    <EntitySet Name="dt_mail_template" EntityType="Self.dt_mail_template" />
+    <EntitySet Name="dt_manager" EntityType="Self.dt_manager" />
+    <EntitySet Name="dt_manager_log" EntityType="Self.dt_manager_log" />
+    <EntitySet Name="dt_manager_role" EntityType="Self.dt_manager_role" />
+    <EntitySet Name="dt_manager_role_value" EntityType="Self.dt_manager_role_value" />
+    <EntitySet Name="dt_navigation" EntityType="Self.dt_navigation" />
+    <EntitySet Name="dt_oauth_app" EntityType="Self.dt_oauth_app" />
+    <EntitySet Name="dt_order_goods" EntityType="Self.dt_order_goods" />
+    <EntitySet Name="dt_orders" EntityType="Self.dt_orders" />
+    <EntitySet Name="dt_payment" EntityType="Self.dt_payment" />
+    <EntitySet Name="dt_site_channel" EntityType="Self.dt_site_channel" />
+    <EntitySet Name="dt_site_channel_field" EntityType="Self.dt_site_channel_field" />
+    <EntitySet Name="dt_site_oauth" EntityType="Self.dt_site_oauth" />
+    <EntitySet Name="dt_site_payment" EntityType="Self.dt_site_payment" />
+    <EntitySet Name="dt_sites" EntityType="Self.dt_sites" />
+    <EntitySet Name="dt_sms_template" EntityType="Self.dt_sms_template" />
+    <EntitySet Name="dt_user_addr_book" EntityType="Self.dt_user_addr_book" />
+    <EntitySet Name="dt_user_amount_log" EntityType="Self.dt_user_amount_log" />
+    <EntitySet Name="dt_user_attach_log" EntityType="Self.dt_user_attach_log" />
+    <EntitySet Name="dt_user_code" EntityType="Self.dt_user_code" />
+    <EntitySet Name="dt_user_group_price" EntityType="Self.dt_user_group_price" />
+    <EntitySet Name="dt_user_groups" EntityType="Self.dt_user_groups" />
+    <EntitySet Name="dt_user_login_log" EntityType="Self.dt_user_login_log" />
+    <EntitySet Name="dt_user_message" EntityType="Self.dt_user_message" />
+    <EntitySet Name="dt_user_oauth" EntityType="Self.dt_user_oauth" />
+    <EntitySet Name="dt_user_point_log" EntityType="Self.dt_user_point_log" />
+    <EntitySet Name="dt_user_recharge" EntityType="Self.dt_user_recharge" />
+    <EntitySet Name="dt_users" EntityType="Self.dt_users" />
+    <AssociationSet Name="FK_DT_SITE__REFERENCE_DT_ARTIC" Association="Self.FK_DT_SITE__REFERENCE_DT_ARTIC">
+      <End Role="dt_article_attribute_field" EntitySet="dt_article_attribute_field" />
+      <End Role="dt_site_channel_field" EntitySet="dt_site_channel_field" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DT_MANAG_REFERENCE_DT_MANAG" Association="Self.FK_DT_MANAG_REFERENCE_DT_MANAG">
+      <End Role="dt_manager_role" EntitySet="dt_manager_role" />
+      <End Role="dt_manager" EntitySet="dt_manager" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DT_MANAG_REFERENCE_DT_MANAG_ROLE_VALUE" Association="Self.FK_DT_MANAG_REFERENCE_DT_MANAG_ROLE_VALUE">
+      <End Role="dt_manager_role" EntitySet="dt_manager_role" />
+      <End Role="dt_manager_role_value" EntitySet="dt_manager_role_value" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DT_SITE__REFERENCE_DT_OAUTH" Association="Self.FK_DT_SITE__REFERENCE_DT_OAUTH">
+      <End Role="dt_oauth_app" EntitySet="dt_oauth_app" />
+      <End Role="dt_site_oauth" EntitySet="dt_site_oauth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DT_ORDER_REFERENCE_DT_ORDER" Association="Self.FK_DT_ORDER_REFERENCE_DT_ORDER">
+      <End Role="dt_orders" EntitySet="dt_orders" />
+      <End Role="dt_order_goods" EntitySet="dt_order_goods" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DT_SITE__REFERENCE_DT_PAYME" Association="Self.FK_DT_SITE__REFERENCE_DT_PAYME">
+      <End Role="dt_payment" EntitySet="dt_payment" />
+      <End Role="dt_site_payment" EntitySet="dt_site_payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DT_CHANN_REFERENCE_DT_CHANN_FIELD" Association="Self.FK_DT_CHANN_REFERENCE_DT_CHANN_FIELD">
+      <End Role="dt_site_channel" EntitySet="dt_site_channel" />
+      <End Role="dt_site_channel_field" EntitySet="dt_site_channel_field" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DT_SITE__REFERENCE_DT_SITES" Association="Self.FK_DT_SITE__REFERENCE_DT_SITES">
+      <End Role="dt_sites" EntitySet="dt_sites" />
+      <End Role="dt_site_channel" EntitySet="dt_site_channel" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

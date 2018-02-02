@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f8f105cd2e51495c97e54922a10aa5b8" Name="Diagram1">
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_article_albums" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_article_attach" Width="1.5" PointX="2.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_article_attribute_field" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_article_category" Width="1.5" PointX="4.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_article_comment" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_article_tags" Width="1.5" PointX="6.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_article_tags_relation" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_channel_article_content" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_channel_article_down" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_channel_article_goods" Width="1.5" PointX="15.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_channel_article_news" Width="1.5" PointX="15.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_channel_article_photo" Width="1.5" PointX="2.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_channel_article_video" Width="1.5" PointX="4.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_express" Width="1.5" PointX="6.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_feedback" Width="1.5" PointX="12.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_link" Width="1.5" PointX="17.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_mail_template" Width="1.5" PointX="17.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_manager" Width="1.5" PointX="8" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_manager_log" Width="1.5" PointX="17.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_manager_role" Width="1.5" PointX="5.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_manager_role_value" Width="1.5" PointX="8" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_navigation" Width="1.5" PointX="17.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_oauth_app" Width="1.5" PointX="10.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_order_goods" Width="1.5" PointX="13" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_orders" Width="1.5" PointX="10.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_payment" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_site_channel" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_site_channel_field" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_site_oauth" Width="1.5" PointX="13" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_site_payment" Width="1.5" PointX="10" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_sites" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_sms_template" Width="1.5" PointX="17.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_user_addr_book" Width="1.5" PointX="8.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_user_amount_log" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_user_attach_log" Width="1.5" PointX="19.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_user_code" Width="1.5" PointX="19.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_user_group_price" Width="1.5" PointX="19.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_user_groups" Width="1.5" PointX="19.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_user_login_log" Width="1.5" PointX="19.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_user_message" Width="1.5" PointX="10.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_user_oauth" Width="1.5" PointX="12.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_user_point_log" Width="1.5" PointX="17.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_user_recharge" Width="1.5" PointX="19.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DTcmsDBModel.dt_users" Width="1.5" PointX="21.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="DTcmsDBModel.FK_DT_SITE__REFERENCE_DT_ARTIC" ManuallyRouted="false" />
+        <AssociationConnector Association="DTcmsDBModel.FK_DT_MANAG_REFERENCE_DT_MANAG" ManuallyRouted="false" />
+        <AssociationConnector Association="DTcmsDBModel.FK_DT_MANAG_REFERENCE_DT_MANAG_ROLE_VALUE" ManuallyRouted="false" />
+        <AssociationConnector Association="DTcmsDBModel.FK_DT_SITE__REFERENCE_DT_OAUTH" ManuallyRouted="false" />
+        <AssociationConnector Association="DTcmsDBModel.FK_DT_ORDER_REFERENCE_DT_ORDER" ManuallyRouted="false" />
+        <AssociationConnector Association="DTcmsDBModel.FK_DT_SITE__REFERENCE_DT_PAYME" ManuallyRouted="false" />
+        <AssociationConnector Association="DTcmsDBModel.FK_DT_CHANN_REFERENCE_DT_CHANN_FIELD" ManuallyRouted="false" />
+        <AssociationConnector Association="DTcmsDBModel.FK_DT_SITE__REFERENCE_DT_SITES" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
