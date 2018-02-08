@@ -1,0 +1,2 @@
+D:\cms\YTcms\YTcms.Dapper.DAL\obj\Debug\YTcms.Dapper.DAL.csprojResolveAssemblyReference.cache
+D:\cms\YTcms\YTcms.Dapper.DAL\obj\Debug\YTcms.Dapper.DAL.csproj.CoreCompileInputs.cache

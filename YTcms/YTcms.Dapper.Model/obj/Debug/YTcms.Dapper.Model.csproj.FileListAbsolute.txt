@@ -8,3 +8,9 @@ D:\www\test\YTcms\YTcms.Dapper.Model\bin\Debug\EntityFramework.SqlServer.dll
 D:\www\test\YTcms\YTcms.Dapper.Model\bin\Debug\EntityFramework.xml
 D:\www\test\YTcms\YTcms.Dapper.Model\bin\Debug\EntityFramework.SqlServer.xml
 D:\www\test\YTcms\YTcms.Dapper.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\cms\YTcms\YTcms.Dapper.Model\bin\Debug\YTcms.Dapper.Model.dll
+D:\cms\YTcms\YTcms.Dapper.Model\bin\Debug\YTcms.Dapper.Model.pdb
+D:\cms\YTcms\YTcms.Dapper.Model\obj\Debug\YTcms.Dapper.Model.csproj.CoreCompileInputs.cache
+D:\cms\YTcms\YTcms.Dapper.Model\obj\Debug\YTcms.Dapper.Model.dll
+D:\cms\YTcms\YTcms.Dapper.Model\obj\Debug\YTcms.Dapper.Model.pdb
+D:\cms\YTcms\YTcms.Dapper.Model\obj\Debug\YTcms.Dapper.Model.csprojResolveAssemblyReference.cache

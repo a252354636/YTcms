@@ -1,0 +1,2 @@
+D:\cms\YTcms\YTcms.Common\obj\Debug\YTcms.Common.csproj.CoreCompileInputs.cache
+D:\cms\YTcms\YTcms.Common\obj\Debug\YTcms.Common.csprojResolveAssemblyReference.cache

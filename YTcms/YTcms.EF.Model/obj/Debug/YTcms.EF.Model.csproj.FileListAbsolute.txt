@@ -9,3 +9,16 @@ D:\www\test\YTcms\YTcms.EF.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
 D:\www\test\YTcms\YTcms.EF.Model\obj\Debug\YTcms.EF.Model.csproj.CoreCompileInputs.cache
 D:\www\test\YTcms\YTcms.EF.Model\obj\Debug\YTcms.EF.Model.dll
 D:\www\test\YTcms\YTcms.EF.Model\obj\Debug\YTcms.EF.Model.pdb
+D:\cms\YTcms\YTcms.EF.Model\bin\Debug\YTcms.EF.Model.dll.config
+D:\cms\YTcms\YTcms.EF.Model\bin\Debug\YTcms.EF.Model.dll
+D:\cms\YTcms\YTcms.EF.Model\bin\Debug\YTcms.EF.Model.pdb
+D:\cms\YTcms\YTcms.EF.Model\bin\Debug\EntityFramework.dll
+D:\cms\YTcms\YTcms.EF.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\cms\YTcms\YTcms.EF.Model\bin\Debug\EntityFramework.xml
+D:\cms\YTcms\YTcms.EF.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\cms\YTcms\YTcms.EF.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\cms\YTcms\YTcms.EF.Model\obj\Debug\YTcms.EF.Model.csprojResolveAssemblyReference.cache
+D:\cms\YTcms\YTcms.EF.Model\obj\Debug\YTcms.EF.Model.csproj.CoreCompileInputs.cache
+D:\cms\YTcms\YTcms.EF.Model\obj\Debug\YTcms.EF.Model.dll
+D:\cms\YTcms\YTcms.EF.Model\obj\Debug\YTcms.EF.Model.pdb
+D:\cms\YTcms\YTcms.EF.Model\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
