@@ -7,7 +7,7 @@ using System.Text;
 using YTcms.DBUtility;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     /// <summary>
     /// 数据访问类:管理日志表
@@ -39,7 +39,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Model.manager_log model)
+        public int Add(Dapper.Model.manager_log model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();//数据字段
@@ -81,7 +81,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Model.manager_log model)
+        public bool Update(Dapper.Model.manager_log model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
@@ -123,11 +123,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.manager_log GetModel(int id)
+        public Dapper.Model.manager_log GetModel(int id)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.manager_log model = new Model.manager_log();
+            Dapper.Model.manager_log model = new Dapper.Model.manager_log();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -193,7 +193,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 根据用户名返回上一次登录记录
         /// </summary>
-        public Model.manager_log GetModel(string user_name, int top_num, string action_type)
+        public Dapper.Model.manager_log GetModel(string user_name, int top_num, string action_type)
         {
             int rows = GetCount("user_name='" + user_name + "'");
             if (top_num == 1)
@@ -238,9 +238,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 将对象转换实体
         /// </summary>
-        public Model.manager_log DataRowToModel(DataRow row)
+        public Dapper.Model.manager_log DataRowToModel(DataRow row)
         {
-            Model.manager_log model = new Model.manager_log();
+            Dapper.Model.manager_log model = new Dapper.Model.manager_log();
             if (row != null)
             {
                 //利用反射获得属性的所有公共属性

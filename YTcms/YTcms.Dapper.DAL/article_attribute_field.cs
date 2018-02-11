@@ -7,7 +7,7 @@ using System.Text;
 using YTcms.DBUtility;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     /// <summary>
     /// 数据访问类:扩展字段表
@@ -39,7 +39,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Model.article_attribute_field model)
+        public int Add(Dapper.Model.article_attribute_field model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();//数据字段
@@ -82,9 +82,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Model.article_attribute_field model)
+        public bool Update(Dapper.Model.article_attribute_field model)
         {
-            Model.article_attribute_field oldModel = GetModel(model.id);//取到旧的数据
+            Dapper.Model.article_attribute_field oldModel = GetModel(model.id);//取到旧的数据
             using (SqlConnection conn = new SqlConnection(DbHelperSQL.connectionString))
             {
                 conn.Open();
@@ -162,7 +162,7 @@ namespace YTcms.Dapper.DAL
         /// </summary>
         public bool Delete(int id)
         {
-            Model.article_attribute_field model = GetModel(id);//取得扩展字段实体
+            Dapper.Model.article_attribute_field model = GetModel(id);//取得扩展字段实体
             using (SqlConnection conn = new SqlConnection(DbHelperSQL.connectionString))
             {
                 conn.Open();
@@ -219,11 +219,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.article_attribute_field GetModel(int id)
+        public Dapper.Model.article_attribute_field GetModel(int id)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.article_attribute_field model = new Model.article_attribute_field();
+            Dapper.Model.article_attribute_field model = new Dapper.Model.article_attribute_field();
             //利用反射获得属性的所有公共属性
             Type modelType = model.GetType();
             PropertyInfo[] pros = modelType.GetProperties();
@@ -302,7 +302,7 @@ namespace YTcms.Dapper.DAL
         public bool Exists(string column_name)
         {
             //检查是否与文章字段相同
-            Model.article artModel = new Model.article();
+            Dapper.Model.article artModel = new Dapper.Model.article();
             //利用反射获得属性的所有公共属性
             Type modelType = artModel.GetType();
             PropertyInfo[] proInfo = modelType.GetProperties();

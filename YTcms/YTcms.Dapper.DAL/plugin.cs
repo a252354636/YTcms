@@ -7,7 +7,7 @@ using System.Xml;
 using YTcms.DBUtility;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     public partial class plugin
     {
@@ -20,14 +20,14 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 返回插件列表
         /// </summary>
-        public List<Model.plugin> GetList(string dirPath)
+        public List<Dapper.Model.plugin> GetList(string dirPath)
         {
-            List<Model.plugin> lt = new List<Model.plugin>();
+            List<Dapper.Model.plugin> lt = new List<Dapper.Model.plugin>();
             DirectoryInfo dirInfo = new DirectoryInfo(dirPath);
             foreach (DirectoryInfo dir in dirInfo.GetDirectories())
             {
-                Model.plugin aboutInfo = GetInfo(dir.FullName + @"\");
-                lt.Add(new Model.plugin
+                Dapper.Model.plugin aboutInfo = GetInfo(dir.FullName + @"\");
+                lt.Add(new Dapper.Model.plugin
                 {
                     directory = aboutInfo.directory,
                     name = aboutInfo.name,
@@ -43,9 +43,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 返回插件说明信息
         /// </summary>
-        public Model.plugin GetInfo(string dirPath)
+        public Dapper.Model.plugin GetInfo(string dirPath)
         {
-            Model.plugin aboutInfo = new Model.plugin();
+            Dapper.Model.plugin aboutInfo = new Dapper.Model.plugin();
             ///存放关于信息的文件 plugin.config是否存在,不存在返回空串
             if (!File.Exists(dirPath + DTKeys.FILE_PLUGIN_XML_CONFING))
                 return aboutInfo;
@@ -82,7 +82,7 @@ namespace YTcms.Dapper.DAL
             }
             catch
             {
-                aboutInfo = new Model.plugin();
+                aboutInfo = new Dapper.Model.plugin();
             }
             return aboutInfo;
         }

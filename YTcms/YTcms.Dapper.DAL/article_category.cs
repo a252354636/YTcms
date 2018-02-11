@@ -7,7 +7,7 @@ using System.Text;
 using YTcms.DBUtility;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     /// <summary>
     /// 数据访问类:文章类别表
@@ -39,7 +39,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Model.article_category model)
+        public int Add(Dapper.Model.article_category model)
         {
             using (SqlConnection conn = new SqlConnection(DbHelperSQL.connectionString))
             {
@@ -80,7 +80,7 @@ namespace YTcms.Dapper.DAL
                         //查询父节点的深度赋值
                         if (model.parent_id > 0)
                         {
-                            Model.article_category model2 = GetModel(conn, trans, model.parent_id);
+                            Dapper.Model.article_category model2 = GetModel(conn, trans, model.parent_id);
                             model.class_list = model2.class_list + model.id + ",";
                             model.class_layer = model2.class_layer + 1;
                         }
@@ -108,7 +108,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Model.article_category model)
+        public bool Update(Dapper.Model.article_category model)
         {
             using (SqlConnection conn = new SqlConnection(DbHelperSQL.connectionString))
             {
@@ -122,13 +122,13 @@ namespace YTcms.Dapper.DAL
                         if (IsContainNode(model.id, model.parent_id))
                         {
                             //查找旧数据
-                            Model.article_category oldModel = GetModel(model.id);
+                            Dapper.Model.article_category oldModel = GetModel(model.id);
                             //查找旧父节点数据
                             string class_list = "," + model.parent_id + ",";
                             int class_layer = 1;
                             if (oldModel.parent_id > 0)
                             {
-                                Model.article_category oldParentModel = GetModel(conn, trans, oldModel.parent_id);//带事务
+                                Dapper.Model.article_category oldParentModel = GetModel(conn, trans, oldModel.parent_id);//带事务
                                 class_list = oldParentModel.class_list + model.parent_id + ",";
                                 class_layer = oldParentModel.class_layer + 1;
                             }
@@ -139,7 +139,7 @@ namespace YTcms.Dapper.DAL
                         //更新子节点
                         if (model.parent_id > 0)
                         {
-                            Model.article_category model2 = GetModel(conn, trans, model.parent_id);//带事务
+                            Dapper.Model.article_category model2 = GetModel(conn, trans, model.parent_id);//带事务
                             model.class_list = model2.class_list + model.id + ",";
                             model.class_layer = model2.class_layer + 1;
                         }
@@ -203,11 +203,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.article_category GetModel(int id)
+        public Dapper.Model.article_category GetModel(int id)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.article_category model = new Model.article_category();
+            Dapper.Model.article_category model = new Dapper.Model.article_category();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -325,11 +325,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体(重载，带事务)
         /// </summary>
-        public Model.article_category GetModel(SqlConnection conn, SqlTransaction trans, int id)
+        public Dapper.Model.article_category GetModel(SqlConnection conn, SqlTransaction trans, int id)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.article_category model = new Model.article_category();
+            Dapper.Model.article_category model = new Dapper.Model.article_category();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -361,9 +361,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 将对象转换实体
         /// </summary>
-        public Model.article_category DataRowToModel(DataRow row)
+        public Dapper.Model.article_category DataRowToModel(DataRow row)
         {
-            Model.article_category model = new Model.article_category();
+            Dapper.Model.article_category model = new Dapper.Model.article_category();
             if (row != null)
             {
                 //利用反射获得属性的所有公共属性
@@ -408,7 +408,7 @@ namespace YTcms.Dapper.DAL
         private void UpdateChilds(SqlConnection conn, SqlTransaction trans, int parent_id)
         {
             //查找父节点信息
-            Model.article_category model = GetModel(conn, trans, parent_id);
+            Dapper.Model.article_category model = GetModel(conn, trans, parent_id);
             if (model != null)
             {
                 //查找子节点

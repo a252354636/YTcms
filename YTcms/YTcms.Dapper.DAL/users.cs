@@ -7,7 +7,7 @@ using System.Text;
 using YTcms.DBUtility;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     /// <summary>
     /// 数据访问类:会员主表
@@ -39,7 +39,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Model.users model)
+        public int Add(Dapper.Model.users model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();//数据字段
@@ -81,7 +81,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Model.users model)
+        public bool Update(Dapper.Model.users model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
@@ -114,7 +114,7 @@ namespace YTcms.Dapper.DAL
         public bool Delete(int id)
         {
             //获取用户旧数据
-            Model.users model = GetModel(id);
+            Dapper.Model.users model = GetModel(id);
             if (model == null)
             {
                 return false;
@@ -229,11 +229,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.users GetModel(int id)
+        public Dapper.Model.users GetModel(int id)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.users model = new Model.users();
+            Dapper.Model.users model = new Dapper.Model.users();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -357,7 +357,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 根据用户名密码返回一个实体
         /// </summary>
-        public Model.users GetModel(string user_name, string password, int emaillogin, int mobilelogin)
+        public Dapper.Model.users GetModel(string user_name, string password, int emaillogin, int mobilelogin)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select top 1 * from " + databaseprefix + "users");
@@ -392,7 +392,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 根据用户名返回一个实体
         /// </summary>
-        public Model.users GetModel(string user_name)
+        public Dapper.Model.users GetModel(string user_name)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select top 1 * from " + databaseprefix + "users");
@@ -470,9 +470,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 将对象转换实体
         /// </summary>
-        public Model.users DataRowToModel(DataRow row)
+        public Dapper.Model.users DataRowToModel(DataRow row)
         {
-            Model.users model = new Model.users();
+            Dapper.Model.users model = new Dapper.Model.users();
             if (row != null)
             {
                 //利用反射获得属性的所有公共属性

@@ -7,7 +7,7 @@ using System.Text;
 using YTcms.DBUtility;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     /// <summary>
     /// 数据访问类:管理角色表
@@ -39,7 +39,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Model.manager_role model)
+        public int Add(Dapper.Model.manager_role model)
         {
             using (SqlConnection conn = new SqlConnection(DbHelperSQL.connectionString))
             {
@@ -85,7 +85,7 @@ namespace YTcms.Dapper.DAL
                             StringBuilder strSql2; //SQL字符串
                             StringBuilder str21; //数据库字段
                             StringBuilder str22; //声明参数
-                            foreach (Model.manager_role_value modelt in model.manager_role_values)
+                            foreach (Dapper.Model.manager_role_value modelt in model.manager_role_values)
                             {
                                 strSql2 = new StringBuilder();
                                 str21 = new StringBuilder();
@@ -136,7 +136,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Model.manager_role model)
+        public bool Update(Dapper.Model.manager_role model)
         {
             using (SqlConnection conn = new SqlConnection(DbHelperSQL.connectionString))
             {
@@ -185,7 +185,7 @@ namespace YTcms.Dapper.DAL
                             StringBuilder strSql2; //SQL字符串
                             StringBuilder str21; //数据库字段
                             StringBuilder str22; //声明参数
-                            foreach (Model.manager_role_value modelt in model.manager_role_values)
+                            foreach (Dapper.Model.manager_role_value modelt in model.manager_role_values)
                             {
                                 strSql2 = new StringBuilder();
                                 str21 = new StringBuilder();
@@ -272,11 +272,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.manager_role GetModel(int id)
+        public Dapper.Model.manager_role GetModel(int id)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.manager_role model = new Model.manager_role();
+            Dapper.Model.manager_role model = new Dapper.Model.manager_role();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -340,9 +340,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 将对象转换实体
         /// </summary>
-        public Model.manager_role DataRowToModel(DataRow row)
+        public Dapper.Model.manager_role DataRowToModel(DataRow row)
         {
-            Model.manager_role model = new Model.manager_role();
+            Dapper.Model.manager_role model = new Dapper.Model.manager_role();
             if (row != null)
             {
                 #region 主表信息======================
@@ -371,11 +371,11 @@ namespace YTcms.Dapper.DAL
                 if (dt1.Rows.Count > 0)
                 {
                     int rowsCount = dt1.Rows.Count;
-                    List<Model.manager_role_value> models = new List<Model.manager_role_value>();
-                    Model.manager_role_value modelt;
+                    List<Dapper.Model.manager_role_value> models = new List<Dapper.Model.manager_role_value>();
+                    Dapper.Model.manager_role_value modelt;
                     for (int n = 0; n < rowsCount; n++)
                     {
-                        modelt = new Model.manager_role_value();
+                        modelt = new Dapper.Model.manager_role_value();
                         Type modeltType = modelt.GetType();
                         for (int i = 0; i < dt1.Rows[n].Table.Columns.Count; i++)
                         {

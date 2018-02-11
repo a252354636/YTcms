@@ -7,7 +7,7 @@ using System.Text;
 using YTcms.DBUtility;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     /// <summary>
     /// 数据访问类:订单表
@@ -39,7 +39,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Model.orders model)
+        public int Add(Dapper.Model.orders model)
         {
             using (SqlConnection conn = new SqlConnection(DbHelperSQL.connectionString))
             {
@@ -87,7 +87,7 @@ namespace YTcms.Dapper.DAL
                             StringBuilder strSql4;
                             StringBuilder str21; //数据库字段
                             StringBuilder str22; //声明参数
-                            foreach (Model.order_goods modelt in model.order_goods)
+                            foreach (Dapper.Model.order_goods modelt in model.order_goods)
                             {
                                 strSql2 = new StringBuilder();
                                 str21 = new StringBuilder();
@@ -151,7 +151,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Model.orders model)
+        public bool Update(Dapper.Model.orders model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
@@ -208,11 +208,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.orders GetModel(int id)
+        public Dapper.Model.orders GetModel(int id)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.orders model = new Model.orders();
+            Dapper.Model.orders model = new Dapper.Model.orders();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -297,11 +297,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 根据订单号返回一个实体
         /// </summary>
-        public Model.orders GetModel(string order_no)
+        public Dapper.Model.orders GetModel(string order_no)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.orders model = new Model.orders();
+            Dapper.Model.orders model = new Dapper.Model.orders();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -387,9 +387,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 将对象转换实体
         /// </summary>
-        public Model.orders DataRowToModel(DataRow row)
+        public Dapper.Model.orders DataRowToModel(DataRow row)
         {
-            Model.orders model = new Model.orders();
+            Dapper.Model.orders model = new Dapper.Model.orders();
             if (row != null)
             {
                 #region 主表信息======================
@@ -418,11 +418,11 @@ namespace YTcms.Dapper.DAL
                 if (dt1.Rows.Count > 0)
                 {
                     int rowsCount = dt1.Rows.Count;
-                    List<Model.order_goods> models = new List<Model.order_goods>();
-                    Model.order_goods modelt;
+                    List<Dapper.Model.order_goods> models = new List<Dapper.Model.order_goods>();
+                    Dapper.Model.order_goods modelt;
                     for (int n = 0; n < rowsCount; n++)
                     {
-                        modelt = new Model.order_goods();
+                        modelt = new Dapper.Model.order_goods();
                         Type modeltType = modelt.GetType();
                         for (int i = 0; i < dt1.Rows[n].Table.Columns.Count; i++)
                         {

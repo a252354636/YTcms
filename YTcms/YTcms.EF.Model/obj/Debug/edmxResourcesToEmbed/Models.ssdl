@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="DTcmsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="YTcmsDBYTcms.Dapper.Dapper.Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="dt_article_albums">
     <Key>
       <PropertyRef Name="id" />
@@ -881,7 +881,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="DTcmsDBModelStoreContainer">
+  <EntityContainer Name="YTcmsDBModelStoreContainer">
     <EntitySet Name="dt_article_albums" EntityType="Self.dt_article_albums" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="dt_article_attach" EntityType="Self.dt_article_attach" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="dt_article_attribute_field" EntityType="Self.dt_article_attribute_field" Schema="dbo" store:Type="Tables" />

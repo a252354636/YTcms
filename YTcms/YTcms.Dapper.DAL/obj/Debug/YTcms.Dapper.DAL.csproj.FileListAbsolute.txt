@@ -1,2 +1,14 @@
 D:\cms\YTcms\YTcms.Dapper.DAL\obj\Debug\YTcms.Dapper.DAL.csprojResolveAssemblyReference.cache
 D:\cms\YTcms\YTcms.Dapper.DAL\obj\Debug\YTcms.Dapper.DAL.csproj.CoreCompileInputs.cache
+D:\cms\YTcms\YTcms.Dapper.DAL\bin\Debug\YTcms.Dapper.DAL.dll
+D:\cms\YTcms\YTcms.Dapper.DAL\bin\Debug\YTcms.Dapper.DAL.pdb
+D:\cms\YTcms\YTcms.Dapper.DAL\bin\Debug\Dapper.dll
+D:\cms\YTcms\YTcms.Dapper.DAL\bin\Debug\YTcms.Common.dll
+D:\cms\YTcms\YTcms.Dapper.DAL\bin\Debug\YTcms.Dapper.Model.dll
+D:\cms\YTcms\YTcms.Dapper.DAL\bin\Debug\YTcms.DBUtility.dll
+D:\cms\YTcms\YTcms.Dapper.DAL\bin\Debug\YTcms.Common.pdb
+D:\cms\YTcms\YTcms.Dapper.DAL\bin\Debug\YTcms.Dapper.Model.pdb
+D:\cms\YTcms\YTcms.Dapper.DAL\bin\Debug\YTcms.DBUtility.pdb
+D:\cms\YTcms\YTcms.Dapper.DAL\bin\Debug\Dapper.xml
+D:\cms\YTcms\YTcms.Dapper.DAL\obj\Debug\YTcms.Dapper.DAL.dll
+D:\cms\YTcms\YTcms.Dapper.DAL\obj\Debug\YTcms.Dapper.DAL.pdb

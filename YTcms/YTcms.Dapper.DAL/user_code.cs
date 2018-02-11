@@ -7,7 +7,7 @@ using System.Text;
 using YTcms.DBUtility;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     /// <summary>
     /// 数据访问类:用户随机码表
@@ -39,7 +39,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Model.user_code model)
+        public int Add(Dapper.Model.user_code model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();//数据字段
@@ -81,7 +81,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Model.user_code model)
+        public bool Update(Dapper.Model.user_code model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
@@ -126,11 +126,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.user_code GetModel(int id)
+        public Dapper.Model.user_code GetModel(int id)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.user_code model = new Model.user_code();
+            Dapper.Model.user_code model = new Dapper.Model.user_code();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -239,11 +239,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 根据生成码得到一个对象实体
         /// </summary>
-        public Model.user_code GetModel(string str_code)
+        public Dapper.Model.user_code GetModel(string str_code)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.user_code model = new Model.user_code();
+            Dapper.Model.user_code model = new Dapper.Model.user_code();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -270,11 +270,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 根据用户名得到一个对象实体
         /// </summary>
-        public Model.user_code GetModel(string user_name, string code_type, string datepart)
+        public Dapper.Model.user_code GetModel(string user_name, string code_type, string datepart)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.user_code model = new Model.user_code();
+            Dapper.Model.user_code model = new Dapper.Model.user_code();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -317,9 +317,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 将对象转换实体
         /// </summary>
-        public Model.user_code DataRowToModel(DataRow row)
+        public Dapper.Model.user_code DataRowToModel(DataRow row)
         {
-            Model.user_code model = new Model.user_code();
+            Dapper.Model.user_code model = new Dapper.Model.user_code();
             if (row != null)
             {
                 //利用反射获得属性的所有公共属性

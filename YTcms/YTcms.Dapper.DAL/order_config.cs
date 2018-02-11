@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     public partial class orderconfig
     {
@@ -12,15 +12,15 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         ///  读取站点配置文件
         /// </summary>
-        public Model.orderconfig loadConfig(string configFilePath)
+        public Dapper.Model.orderconfig loadConfig(string configFilePath)
         {
-            return (Model.orderconfig)SerializationHelper.Load(typeof(Model.orderconfig), configFilePath);
+            return (Dapper.Model.orderconfig)SerializationHelper.Load(typeof(Dapper.Model.orderconfig), configFilePath);
         }
 
         /// <summary>
         /// 写入站点配置文件
         /// </summary>
-        public Model.orderconfig saveConifg(Model.orderconfig model, string configFilePath)
+        public Dapper.Model.orderconfig saveConifg(Dapper.Model.orderconfig model, string configFilePath)
         {
             lock (lockHelper)
             {

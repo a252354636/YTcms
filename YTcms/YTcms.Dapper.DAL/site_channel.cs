@@ -7,7 +7,7 @@ using System.Text;
 using YTcms.DBUtility;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     /// <summary>
     /// 数据访问类:系统频道表
@@ -39,7 +39,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 增加一条数据及其子表
         /// </summary>
-        public int Add(Model.site_channel model)
+        public int Add(Dapper.Model.site_channel model)
         {
             //取得站点对应的导航，如果站点导航不存在则退出新增
             int parent_id = new DAL.sites(databaseprefix).GetSiteNavId(model.site_id);
@@ -115,9 +115,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Model.site_channel model)
+        public bool Update(Dapper.Model.site_channel model)
         {
-            Model.site_channel oldModel = GetModel(model.id);//取得旧的频道数据
+            Dapper.Model.site_channel oldModel = GetModel(model.id);//取得旧的频道数据
             int siteNavParentId = new DAL.sites(databaseprefix).GetSiteNavId(model.site_id);//取得站点对应的导航ID
             if (siteNavParentId == 0)
             {
@@ -262,11 +262,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.site_channel GetModel(int id)
+        public Dapper.Model.site_channel GetModel(int id)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.site_channel model = new Model.site_channel();
+            Dapper.Model.site_channel model = new Dapper.Model.site_channel();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -367,11 +367,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.site_channel GetModel(string channel_name)
+        public Dapper.Model.site_channel GetModel(string channel_name)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.site_channel model = new Model.site_channel();
+            Dapper.Model.site_channel model = new Dapper.Model.site_channel();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -476,9 +476,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 将对象转换实体
         /// </summary>
-        public Model.site_channel DataRowToModel(DataRow row)
+        public Dapper.Model.site_channel DataRowToModel(DataRow row)
         {
-            Model.site_channel model = new Model.site_channel();
+            Dapper.Model.site_channel model = new Dapper.Model.site_channel();
             if (row != null)
             {
                 #region 主表信息======================
@@ -506,11 +506,11 @@ namespace YTcms.Dapper.DAL
                 if (dt.Rows.Count > 0)
                 {
                     int rowsCount = dt.Rows.Count;
-                    List<Model.site_channel_field> models = new List<Model.site_channel_field>();
-                    Model.site_channel_field modelt;
+                    List<Dapper.Model.site_channel_field> models = new List<Dapper.Model.site_channel_field>();
+                    Dapper.Model.site_channel_field modelt;
                     for (int n = 0; n < rowsCount; n++)
                     {
-                        modelt = new Model.site_channel_field();
+                        modelt = new Dapper.Model.site_channel_field();
                         Type modeltType = modelt.GetType();
                         for (int i = 0; i < dt.Rows[n].Table.Columns.Count; i++)
                         {
@@ -535,14 +535,14 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 新增扩展字段及创建频道数据表
         /// </summary>
-        private void FieldAdd(SqlConnection conn, SqlTransaction trans, Model.site_channel model)
+        private void FieldAdd(SqlConnection conn, SqlTransaction trans, Dapper.Model.site_channel model)
         {
             string fieldIds = string.Empty;//存储已加截的扩展字段ID集合
             //新增扩展字段表及存储字段的ID
             if (model.channel_fields != null)
             {
                 StringBuilder strSql1;
-                foreach (Model.site_channel_field modelt in model.channel_fields)
+                foreach (Dapper.Model.site_channel_field modelt in model.channel_fields)
                 {
                     fieldIds += modelt.field_id + ",";
                     strSql1 = new StringBuilder();
@@ -605,17 +605,17 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 编辑扩展字段及频道数据表
         /// </summary>
-        private void FieldUpdate(SqlConnection conn, SqlTransaction trans, Model.site_channel newModel, Model.site_channel oldModel)
+        private void FieldUpdate(SqlConnection conn, SqlTransaction trans, Dapper.Model.site_channel newModel, Dapper.Model.site_channel oldModel)
         {
             if (newModel.channel_fields != null)
             {
                 string newFieldIds = string.Empty; //用来存储新增的字段ID
                 //添加扩展字段
                 StringBuilder strSql1;
-                foreach (Model.site_channel_field modelt in newModel.channel_fields)
+                foreach (Dapper.Model.site_channel_field modelt in newModel.channel_fields)
                 {
                     strSql1 = new StringBuilder();
-                    Model.site_channel_field fieldModel = null;
+                    Dapper.Model.site_channel_field fieldModel = null;
                     if (oldModel.channel_fields != null)
                     {
                         fieldModel = oldModel.channel_fields.Find(p => p.field_id == modelt.field_id); //查找是否已经存在
@@ -659,14 +659,14 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 删除已移除的扩展字段及频道数据表列
         /// </summary>
-        private void FieldDelete(SqlConnection conn, SqlTransaction trans, Model.site_channel newModel, Model.site_channel oldModel)
+        private void FieldDelete(SqlConnection conn, SqlTransaction trans, Dapper.Model.site_channel newModel, Dapper.Model.site_channel oldModel)
         {
             if (oldModel.channel_fields == null)
             {
                 return;
             }
             string fieldIds = string.Empty;
-            foreach (Model.site_channel_field modelt in oldModel.channel_fields)
+            foreach (Dapper.Model.site_channel_field modelt in oldModel.channel_fields)
             {
                 //查找对应的字段ID，不在旧实体则删除
                 if (newModel.channel_fields.Find(p => p.field_id == modelt.field_id) == null)

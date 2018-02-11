@@ -7,7 +7,7 @@ using System.Text;
 using YTcms.DBUtility;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     /// <summary>
     /// 数据访问类:OAuth应用
@@ -39,7 +39,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Model.oauth_app model)
+        public int Add(Dapper.Model.oauth_app model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();//数据字段
@@ -81,7 +81,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Model.oauth_app model)
+        public bool Update(Dapper.Model.oauth_app model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
@@ -140,11 +140,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.oauth_app GetModel(int id)
+        public Dapper.Model.oauth_app GetModel(int id)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.oauth_app model = new Model.oauth_app();
+            Dapper.Model.oauth_app model = new Dapper.Model.oauth_app();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -172,11 +172,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.oauth_app GetModel(string api_path)
+        public Dapper.Model.oauth_app GetModel(string api_path)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.oauth_app model = new Model.oauth_app();
+            Dapper.Model.oauth_app model = new Dapper.Model.oauth_app();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -271,9 +271,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 将对象转换实体
         /// </summary>
-        public Model.oauth_app DataRowToModel(DataRow row)
+        public Dapper.Model.oauth_app DataRowToModel(DataRow row)
         {
-            Model.oauth_app model = new Model.oauth_app();
+            Dapper.Model.oauth_app model = new Dapper.Model.oauth_app();
             if (row != null)
             {
                 //利用反射获得属性的所有公共属性

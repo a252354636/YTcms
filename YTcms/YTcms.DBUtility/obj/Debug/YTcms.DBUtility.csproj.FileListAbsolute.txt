@@ -1,6 +1,6 @@
-D:\cms\YTcms\YTcms.DBUtility\obj\Debug\YTcms.DBUtility.csprojResolveAssemblyReference.cache
 D:\cms\YTcms\YTcms.DBUtility\obj\Debug\YTcms.DBUtility.csproj.CoreCompileInputs.cache
 D:\cms\YTcms\YTcms.DBUtility\bin\Debug\YTcms.DBUtility.dll
 D:\cms\YTcms\YTcms.DBUtility\bin\Debug\YTcms.DBUtility.pdb
 D:\cms\YTcms\YTcms.DBUtility\obj\Debug\YTcms.DBUtility.dll
 D:\cms\YTcms\YTcms.DBUtility\obj\Debug\YTcms.DBUtility.pdb
+D:\cms\YTcms\YTcms.DBUtility\obj\Debug\YTcms.DBUtility.csprojResolveAssemblyReference.cache

@@ -7,7 +7,7 @@ using System.Text;
 using YTcms.DBUtility;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     /// <summary>
     /// 数据访问类:系统导航菜单
@@ -39,7 +39,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Model.navigation model)
+        public int Add(Dapper.Model.navigation model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();//数据字段
@@ -81,7 +81,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Model.navigation model)
+        public bool Update(Dapper.Model.navigation model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
@@ -126,11 +126,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.navigation GetModel(int id)
+        public Dapper.Model.navigation GetModel(int id)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.navigation model = new Model.navigation();
+            Dapper.Model.navigation model = new Dapper.Model.navigation();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -212,11 +212,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.navigation GetModel(string nav_name)
+        public Dapper.Model.navigation GetModel(string nav_name)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.navigation model = new Model.navigation();
+            Dapper.Model.navigation model = new Dapper.Model.navigation();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -244,11 +244,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体，带事务
         /// </summary>
-        public Model.navigation GetModel(SqlConnection conn, SqlTransaction trans, string nav_name)
+        public Dapper.Model.navigation GetModel(SqlConnection conn, SqlTransaction trans, string nav_name)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.navigation model = new Model.navigation();
+            Dapper.Model.navigation model = new Dapper.Model.navigation();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -557,9 +557,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 将对象转换实体
         /// </summary>
-        public Model.navigation DataRowToModel(DataRow row)
+        public Dapper.Model.navigation DataRowToModel(DataRow row)
         {
-            Model.navigation model = new Model.navigation();
+            Dapper.Model.navigation model = new Dapper.Model.navigation();
             if (row != null)
             {
                 //利用反射获得属性的所有公共属性

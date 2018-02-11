@@ -7,7 +7,7 @@ using System.Text;
 using YTcms.DBUtility;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     /// <summary>
     /// 数据访问类:用户下载记录
@@ -40,7 +40,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Model.user_attach_log model)
+        public int Add(Dapper.Model.user_attach_log model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();//数据字段
@@ -82,7 +82,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Model.user_attach_log model)
+        public bool Update(Dapper.Model.user_attach_log model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
@@ -128,11 +128,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.user_attach_log GetModel(int id)
+        public Dapper.Model.user_attach_log GetModel(int id)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.user_attach_log model = new Model.user_attach_log();
+            Dapper.Model.user_attach_log model = new Dapper.Model.user_attach_log();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -213,9 +213,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 将对象转换实体
         /// </summary>
-        public Model.user_attach_log DataRowToModel(DataRow row)
+        public Dapper.Model.user_attach_log DataRowToModel(DataRow row)
         {
-            Model.user_attach_log model = new Model.user_attach_log();
+            Dapper.Model.user_attach_log model = new Dapper.Model.user_attach_log();
             if (row != null)
             {
                 //利用反射获得属性的所有公共属性

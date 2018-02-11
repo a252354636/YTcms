@@ -75,7 +75,7 @@ namespace YTcms.Dapper.Model
         private string _ossdomain = string.Empty;
 
         private string _sysdatabaseprefix = "dt_";
-        private string _sysencryptstring = "DTcms";
+        private string _sysencryptstring = "YTcms";
 
         #region 主站基本信息==================================
         /// <summary>

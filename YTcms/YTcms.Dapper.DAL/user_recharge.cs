@@ -7,7 +7,7 @@ using System.Text;
 using YTcms.DBUtility;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     /// <summary>
     /// 数据访问类:用户充值表
@@ -39,7 +39,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Model.user_recharge model)
+        public int Add(Dapper.Model.user_recharge model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();//数据字段
@@ -81,7 +81,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Model.user_recharge model)
+        public bool Update(Dapper.Model.user_recharge model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
@@ -126,11 +126,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.user_recharge GetModel(int id)
+        public Dapper.Model.user_recharge GetModel(int id)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.user_recharge model = new Model.user_recharge();
+            Dapper.Model.user_recharge model = new Dapper.Model.user_recharge();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -232,11 +232,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.user_recharge GetModel(string recharge_no)
+        public Dapper.Model.user_recharge GetModel(string recharge_no)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.user_recharge model = new Model.user_recharge();
+            Dapper.Model.user_recharge model = new Dapper.Model.user_recharge();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -263,7 +263,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 直接充值订单
         /// </summary>
-        public bool Recharge(Model.user_recharge model)
+        public bool Recharge(Dapper.Model.user_recharge model)
         {
             using (SqlConnection conn = new SqlConnection(DbHelperSQL.connectionString))
             {
@@ -273,12 +273,12 @@ namespace YTcms.Dapper.DAL
                     try
                     {
                         #region 增加一条账户余额记录===============
-                        Model.user_amount_log amountModel = new Model.user_amount_log();
-                        amountModel.user_id = model.user_id;
-                        amountModel.user_name = model.user_name;
-                        amountModel.value = model.amount;
-                        amountModel.remark = "在线充值，单号：" + model.recharge_no;
-                        amountModel.add_time = DateTime.Now;
+                        Dapper.Model.user_amount_log amountModel = new Dapper.Model.user_amount_log();
+            amountModel.user_id = model.user_id;
+            amountModel.user_name = model.user_name;
+            amountModel.value = model.amount;
+            amountModel.remark = "在线充值，单号：" + model.recharge_no;
+            amountModel.add_time = DateTime.Now;
                         new DAL.user_amount_log(databaseprefix).Add(conn, trans, amountModel);
                         #endregion
 
@@ -330,7 +330,7 @@ namespace YTcms.Dapper.DAL
         /// </summary>
         public bool Confirm(string recharge_no)
         {
-            Model.user_recharge model = GetModel(recharge_no);//根据充值单号得到实体
+            Dapper.Model.user_recharge model = GetModel(recharge_no);//根据充值单号得到实体
             if (model == null)
             {
                 return false;
@@ -343,12 +343,12 @@ namespace YTcms.Dapper.DAL
                     try
                     {
                         #region 增加一条账户余额记录===============
-                        Model.user_amount_log amountModel = new Model.user_amount_log();
-                        amountModel.user_id = model.user_id;
-                        amountModel.user_name = model.user_name;
-                        amountModel.value = model.amount;
-                        amountModel.remark = "在线充值，单号：" + recharge_no;
-                        amountModel.add_time = DateTime.Now;
+                        Dapper.Model.user_amount_log amountModel = new Dapper.Model.user_amount_log();
+            amountModel.user_id = model.user_id;
+            amountModel.user_name = model.user_name;
+            amountModel.value = model.amount;
+            amountModel.remark = "在线充值，单号：" + recharge_no;
+            amountModel.add_time = DateTime.Now;
                         new DAL.user_amount_log(databaseprefix).Add(conn, trans, amountModel);
                         #endregion
 
@@ -382,9 +382,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 将对象转换实体
         /// </summary>
-        public Model.user_recharge DataRowToModel(DataRow row)
+        public Dapper.Model.user_recharge DataRowToModel(DataRow row)
         {
-            Model.user_recharge model = new Model.user_recharge();
+            Dapper.Model.user_recharge model = new Dapper.Model.user_recharge();
             if (row != null)
             {
                 //利用反射获得属性的所有公共属性

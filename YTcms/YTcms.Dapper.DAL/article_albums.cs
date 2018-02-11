@@ -7,7 +7,7 @@ using System.Text;
 using YTcms.DBUtility;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     /// <summary>
     /// 数据访问类:图片相册
@@ -24,14 +24,14 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public void Add(SqlConnection conn, SqlTransaction trans, List<Model.article_albums> models, int channel_id, int article_id)
+        public void Add(SqlConnection conn, SqlTransaction trans, List<Dapper.Model.article_albums> models, int channel_id, int article_id)
         {
             if (models != null)
             {
                 StringBuilder strSql;
                 StringBuilder str1; ;//数据字段
                 StringBuilder str2;//数据参数
-                foreach (Model.article_albums modelt in models)
+                foreach (Dapper.Model.article_albums modelt in models)
                 {
                     strSql = new StringBuilder();
                     str1 = new StringBuilder();
@@ -77,7 +77,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public void Update(SqlConnection conn, SqlTransaction trans, List<Model.article_albums> models, int channel_id, int article_id)
+        public void Update(SqlConnection conn, SqlTransaction trans, List<Dapper.Model.article_albums> models, int channel_id, int article_id)
         {
             //删除已移除的图片
             DeleteList(conn, trans, models, channel_id, article_id);
@@ -87,7 +87,7 @@ namespace YTcms.Dapper.DAL
                 StringBuilder strSql;
                 StringBuilder str1;//数据字段
                 StringBuilder str2;//数据参数
-                foreach (Model.article_albums modelt in models)
+                foreach (Dapper.Model.article_albums modelt in models)
                 {
                     strSql = new StringBuilder();
                     str1 = new StringBuilder();
@@ -146,9 +146,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 获得数据列表
         /// </summary>
-        public List<Model.article_albums> GetList(int channel_id, int article_id)
+        public List<Dapper.Model.article_albums> GetList(int channel_id, int article_id)
         {
-            List<Model.article_albums> modelList = new List<Model.article_albums>();
+            List<Dapper.Model.article_albums> modelList = new List<Dapper.Model.article_albums>();
 
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select * FROM " + databaseprefix + "article_albums ");
@@ -168,12 +168,12 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 查找不存在的图片并删除已移除的图片及数据
         /// </summary>
-        public void DeleteList(SqlConnection conn, SqlTransaction trans, List<Model.article_albums> models, int channel_id, int article_id)
+        public void DeleteList(SqlConnection conn, SqlTransaction trans, List<Dapper.Model.article_albums> models, int channel_id, int article_id)
         {
             StringBuilder idList = new StringBuilder();
             if (models != null)
             {
-                foreach (Model.article_albums modelt in models)
+                foreach (Dapper.Model.article_albums modelt in models)
                 {
                     if (modelt.id > 0)
                     {
@@ -203,11 +203,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 删除相册图片
         /// </summary>
-        public void DeleteFile(List<Model.article_albums> models)
+        public void DeleteFile(List<Dapper.Model.article_albums> models)
         {
             if (models != null)
             {
-                foreach (Model.article_albums modelt in models)
+                foreach (Dapper.Model.article_albums modelt in models)
                 {
                     FileHelper.DeleteFile(modelt.thumb_path);
                     FileHelper.DeleteFile(modelt.original_path);
@@ -218,9 +218,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 将对象转换实体
         /// </summary>
-        public Model.article_albums DataRowToModel(DataRow row)
+        public Dapper.Model.article_albums DataRowToModel(DataRow row)
         {
-            Model.article_albums model = new Model.article_albums();
+            Dapper.Model.article_albums model = new Dapper.Model.article_albums();
             if (row != null)
             {
                 //利用反射获得属性的所有公共属性

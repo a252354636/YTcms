@@ -7,7 +7,7 @@ using System.Text;
 using YTcms.DBUtility;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     /// <summary>
     /// 数据访问类:附件表
@@ -40,14 +40,14 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public void Add(SqlConnection conn, SqlTransaction trans, List<Model.article_attach> models, int channel_id, int article_id)
+        public void Add(SqlConnection conn, SqlTransaction trans, List<Dapper.Model.article_attach> models, int channel_id, int article_id)
         {
             if (models != null)
             {
                 StringBuilder strSql;
                 StringBuilder str1; ;//数据字段
                 StringBuilder str2;//数据参数
-                foreach (Model.article_attach modelt in models)
+                foreach (Dapper.Model.article_attach modelt in models)
                 {
                     strSql = new StringBuilder();
                     str1 = new StringBuilder();
@@ -93,7 +93,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public void Update(SqlConnection conn, SqlTransaction trans, List<Model.article_attach> models, int channel_id, int article_id)
+        public void Update(SqlConnection conn, SqlTransaction trans, List<Dapper.Model.article_attach> models, int channel_id, int article_id)
         {
             //删除已移除的附件
             DeleteList(conn, trans, models, channel_id, article_id);
@@ -103,7 +103,7 @@ namespace YTcms.Dapper.DAL
                 StringBuilder strSql;
                 StringBuilder str1;//数据字段
                 StringBuilder str2;//数据参数
-                foreach (Model.article_attach modelt in models)
+                foreach (Dapper.Model.article_attach modelt in models)
                 {
                     strSql = new StringBuilder();
                     str1 = new StringBuilder();
@@ -162,12 +162,12 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 查找不存在的文件并删除已移除的附件及数据
         /// </summary>
-        public void DeleteList(SqlConnection conn, SqlTransaction trans, List<Model.article_attach> models, int channel_id, int article_id)
+        public void DeleteList(SqlConnection conn, SqlTransaction trans, List<Dapper.Model.article_attach> models, int channel_id, int article_id)
         {
             StringBuilder idList = new StringBuilder();
             if (models != null)
             {
-                foreach (Model.article_attach modelt in models)
+                foreach (Dapper.Model.article_attach modelt in models)
                 {
                     if (modelt.id > 0)
                     {
@@ -196,11 +196,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.article_attach GetModel(int id)
+        public Dapper.Model.article_attach GetModel(int id)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.article_attach model = new Model.article_attach();
+            Dapper.Model.article_attach model = new Dapper.Model.article_attach();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -228,9 +228,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 获得数据列表
         /// </summary>
-        public List<Model.article_attach> GetList(int channel_id, int article_id)
+        public List<Dapper.Model.article_attach> GetList(int channel_id, int article_id)
         {
-            List<Model.article_attach> modelList = new List<Model.article_attach>();
+            List<Dapper.Model.article_attach> modelList = new List<Dapper.Model.article_attach>();
 
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select * FROM " + databaseprefix + "article_attach ");
@@ -269,7 +269,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 插入一条下载附件记录
         /// </summary>
-        public int AddLog(Model.user_attach_log model)
+        public int AddLog(Dapper.Model.user_attach_log model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();//数据字段
@@ -354,11 +354,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 删除附件文件
         /// </summary>
-        public void DeleteFile(List<Model.article_attach> models)
+        public void DeleteFile(List<Dapper.Model.article_attach> models)
         {
             if (models != null)
             {
-                foreach (Model.article_attach modelt in models)
+                foreach (Dapper.Model.article_attach modelt in models)
                 {
                     FileHelper.DeleteFile(modelt.file_path);
                 }
@@ -368,9 +368,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 将对象转换实体
         /// </summary>
-        public Model.article_attach DataRowToModel(DataRow row)
+        public Dapper.Model.article_attach DataRowToModel(DataRow row)
         {
-            Model.article_attach model = new Model.article_attach();
+            Dapper.Model.article_attach model = new Dapper.Model.article_attach();
             if (row != null)
             {
                 //利用反射获得属性的所有公共属性

@@ -7,7 +7,7 @@ using System.Text;
 using YTcms.DBUtility;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     /// <summary>
     /// 数据访问类:会员组价格
@@ -24,7 +24,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 增加一条数据，带事务
         /// </summary>
-        public bool Add(SqlConnection conn, SqlTransaction trans, Model.user_group_price model, int channel_id, int article_id)
+        public bool Add(SqlConnection conn, SqlTransaction trans, Dapper.Model.user_group_price model, int channel_id, int article_id)
         {
             StringBuilder strSql = new StringBuilder(); //SQL字符串
             StringBuilder str1 = new StringBuilder(); //数据库字段
@@ -82,11 +82,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.user_group_price GetModel(int group_id, int channel_id, int article_id)
+        public Dapper.Model.user_group_price GetModel(int group_id, int channel_id, int article_id)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.user_group_price model = new Model.user_group_price();
+            Dapper.Model.user_group_price model = new Dapper.Model.user_group_price();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -118,9 +118,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 获得数据列表
         /// </summary>
-        public List<Model.user_group_price> GetList(int channel_id, int article_id)
+        public List<Dapper.Model.user_group_price> GetList(int channel_id, int article_id)
         {
-            List<Model.user_group_price> modelList = new List<Model.user_group_price>();
+            List<Dapper.Model.user_group_price> modelList = new List<Dapper.Model.user_group_price>();
 
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select * FROM " + databaseprefix + "user_group_price ");
@@ -142,9 +142,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 将对象转换实体
         /// </summary>
-        public Model.user_group_price DataRowToModel(DataRow row)
+        public Dapper.Model.user_group_price DataRowToModel(DataRow row)
         {
-            Model.user_group_price model = new Model.user_group_price();
+            Dapper.Model.user_group_price model = new Dapper.Model.user_group_price();
             if (row != null)
             {
                 //利用反射获得属性的所有公共属性

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DTcmsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="YTcmsDBYTcms.Dapper.Dapper.Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="dt_article_albums">
           <Key>
             <PropertyRef Name="id" />
@@ -886,7 +886,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DTcmsDBModelStoreContainer">
+        <EntityContainer Name="YTcmsDBModelStoreContainer">
           <EntitySet Name="dt_article_albums" EntityType="Self.dt_article_albums" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="dt_article_attach" EntityType="Self.dt_article_attach" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="dt_article_attribute_field" EntityType="Self.dt_article_attribute_field" Schema="dbo" store:Type="Tables" />
@@ -968,7 +968,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DTcmsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="YTcmsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="dt_article_albums">
           <Key>
             <PropertyRef Name="id" />
@@ -1949,9 +1949,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DTcmsDBModelStoreContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="YTcmsDBModelStoreContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="dt_article_albums">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_article_albums">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_article_albums">
               <MappingFragment StoreEntitySet="dt_article_albums">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="channel_id" ColumnName="channel_id" />
@@ -1964,7 +1964,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_article_attach">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_article_attach">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_article_attach">
               <MappingFragment StoreEntitySet="dt_article_attach">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="channel_id" ColumnName="channel_id" />
@@ -1980,7 +1980,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_article_attribute_field">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_article_attribute_field">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_article_attribute_field">
               <MappingFragment StoreEntitySet="dt_article_attribute_field">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -2005,7 +2005,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_article_category">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_article_category">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_article_category">
               <MappingFragment StoreEntitySet="dt_article_category">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="site_id" ColumnName="site_id" />
@@ -2027,7 +2027,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_article_comment">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_article_comment">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_article_comment">
               <MappingFragment StoreEntitySet="dt_article_comment">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="site_id" ColumnName="site_id" />
@@ -2047,7 +2047,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_article_tags">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_article_tags">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_article_tags">
               <MappingFragment StoreEntitySet="dt_article_tags">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="title" ColumnName="title" />
@@ -2058,7 +2058,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_article_tags_relation">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_article_tags_relation">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_article_tags_relation">
               <MappingFragment StoreEntitySet="dt_article_tags_relation">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="channel_id" ColumnName="channel_id" />
@@ -2068,7 +2068,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_channel_article_content">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_channel_article_content">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_channel_article_content">
               <MappingFragment StoreEntitySet="dt_channel_article_content">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="site_id" ColumnName="site_id" />
@@ -2101,7 +2101,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_channel_article_down">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_channel_article_down">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_channel_article_down">
               <MappingFragment StoreEntitySet="dt_channel_article_down">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="site_id" ColumnName="site_id" />
@@ -2136,7 +2136,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_channel_article_goods">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_channel_article_goods">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_channel_article_goods">
               <MappingFragment StoreEntitySet="dt_channel_article_goods">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="site_id" ColumnName="site_id" />
@@ -2175,7 +2175,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_channel_article_news">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_channel_article_news">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_channel_article_news">
               <MappingFragment StoreEntitySet="dt_channel_article_news">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="site_id" ColumnName="site_id" />
@@ -2210,7 +2210,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_channel_article_photo">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_channel_article_photo">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_channel_article_photo">
               <MappingFragment StoreEntitySet="dt_channel_article_photo">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="site_id" ColumnName="site_id" />
@@ -2245,7 +2245,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_channel_article_video">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_channel_article_video">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_channel_article_video">
               <MappingFragment StoreEntitySet="dt_channel_article_video">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="site_id" ColumnName="site_id" />
@@ -2280,7 +2280,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_express">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_express">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_express">
               <MappingFragment StoreEntitySet="dt_express">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="title" ColumnName="title" />
@@ -2294,7 +2294,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_feedback">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_feedback">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_feedback">
               <MappingFragment StoreEntitySet="dt_feedback">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="site_id" ColumnName="site_id" />
@@ -2312,7 +2312,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_link">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_link">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_link">
               <MappingFragment StoreEntitySet="dt_link">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="site_id" ColumnName="site_id" />
@@ -2331,7 +2331,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_mail_template">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_mail_template">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_mail_template">
               <MappingFragment StoreEntitySet="dt_mail_template">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="title" ColumnName="title" />
@@ -2343,7 +2343,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_manager">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_manager">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_manager">
               <MappingFragment StoreEntitySet="dt_manager">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="role_id" ColumnName="role_id" />
@@ -2362,7 +2362,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_manager_log">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_manager_log">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_manager_log">
               <MappingFragment StoreEntitySet="dt_manager_log">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
@@ -2375,7 +2375,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_manager_role">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_manager_role">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_manager_role">
               <MappingFragment StoreEntitySet="dt_manager_role">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="role_name" ColumnName="role_name" />
@@ -2385,7 +2385,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_manager_role_value">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_manager_role_value">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_manager_role_value">
               <MappingFragment StoreEntitySet="dt_manager_role_value">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="role_id" ColumnName="role_id" />
@@ -2395,7 +2395,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_navigation">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_navigation">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_navigation">
               <MappingFragment StoreEntitySet="dt_navigation">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="parent_id" ColumnName="parent_id" />
@@ -2415,7 +2415,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_oauth_app">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_oauth_app">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_oauth_app">
               <MappingFragment StoreEntitySet="dt_oauth_app">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="title" ColumnName="title" />
@@ -2428,7 +2428,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_order_goods">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_order_goods">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_order_goods">
               <MappingFragment StoreEntitySet="dt_order_goods">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="channel_id" ColumnName="channel_id" />
@@ -2446,7 +2446,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_orders">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_orders">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_orders">
               <MappingFragment StoreEntitySet="dt_orders">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="site_id" ColumnName="site_id" />
@@ -2487,7 +2487,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_payment">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_payment">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_payment">
               <MappingFragment StoreEntitySet="dt_payment">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="title" ColumnName="title" />
@@ -2506,7 +2506,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_site_channel">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_site_channel">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_site_channel">
               <MappingFragment StoreEntitySet="dt_site_channel">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="site_id" ColumnName="site_id" />
@@ -2523,7 +2523,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_site_channel_field">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_site_channel_field">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_site_channel_field">
               <MappingFragment StoreEntitySet="dt_site_channel_field">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="channel_id" ColumnName="channel_id" />
@@ -2532,7 +2532,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_site_oauth">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_site_oauth">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_site_oauth">
               <MappingFragment StoreEntitySet="dt_site_oauth">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="site_id" ColumnName="site_id" />
@@ -2546,7 +2546,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_site_payment">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_site_payment">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_site_payment">
               <MappingFragment StoreEntitySet="dt_site_payment">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="site_id" ColumnName="site_id" />
@@ -2562,7 +2562,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_sites">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_sites">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_sites">
               <MappingFragment StoreEntitySet="dt_sites">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="title" ColumnName="title" />
@@ -2588,7 +2588,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_sms_template">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_sms_template">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_sms_template">
               <MappingFragment StoreEntitySet="dt_sms_template">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="title" ColumnName="title" />
@@ -2599,7 +2599,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_user_addr_book">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_addr_book">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_user_addr_book">
               <MappingFragment StoreEntitySet="dt_user_addr_book">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
@@ -2617,7 +2617,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_user_amount_log">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_amount_log">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_user_amount_log">
               <MappingFragment StoreEntitySet="dt_user_amount_log">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
@@ -2629,7 +2629,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_user_attach_log">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_attach_log">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_user_attach_log">
               <MappingFragment StoreEntitySet="dt_user_attach_log">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
@@ -2641,7 +2641,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_user_code">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_code">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_user_code">
               <MappingFragment StoreEntitySet="dt_user_code">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
@@ -2657,7 +2657,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_user_group_price">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_group_price">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_user_group_price">
               <MappingFragment StoreEntitySet="dt_user_group_price">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="channel_id" ColumnName="channel_id" />
@@ -2668,7 +2668,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_user_groups">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_groups">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_user_groups">
               <MappingFragment StoreEntitySet="dt_user_groups">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="title" ColumnName="title" />
@@ -2684,7 +2684,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_user_login_log">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_login_log">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_user_login_log">
               <MappingFragment StoreEntitySet="dt_user_login_log">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
@@ -2696,7 +2696,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_user_message">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_message">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_user_message">
               <MappingFragment StoreEntitySet="dt_user_message">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="type" ColumnName="type" />
@@ -2711,7 +2711,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_user_oauth">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_oauth">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_user_oauth">
               <MappingFragment StoreEntitySet="dt_user_oauth">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
@@ -2724,7 +2724,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_user_point_log">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_point_log">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_user_point_log">
               <MappingFragment StoreEntitySet="dt_user_point_log">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
@@ -2736,7 +2736,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_user_recharge">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_user_recharge">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_user_recharge">
               <MappingFragment StoreEntitySet="dt_user_recharge">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
@@ -2751,7 +2751,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="dt_users">
-            <EntityTypeMapping TypeName="DTcmsDBModel.dt_users">
+            <EntityTypeMapping TypeName="YTcmsDBYTcms.Dapper.Dapper.Model.dt_users">
               <MappingFragment StoreEntitySet="dt_users">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="site_id" ColumnName="site_id" />

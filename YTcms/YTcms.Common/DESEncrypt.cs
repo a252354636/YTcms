@@ -19,7 +19,7 @@ namespace YTcms.Common
         /// <returns></returns>
         public static string Encrypt(string Text)
         {
-            return Encrypt(Text, "DTcms");
+            return Encrypt(Text, "YTcms");
         }
         /// <summary> 
         /// 加密数据 
@@ -57,7 +57,7 @@ namespace YTcms.Common
         /// <returns></returns>
         public static string Decrypt(string Text)
         {
-            return Decrypt(Text, "DTcms");
+            return Decrypt(Text, "YTcms");
         }
         /// <summary> 
         /// 解密数据 

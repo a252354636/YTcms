@@ -32,7 +32,7 @@ namespace YTcms.Common
             }
             public string ProductName
             {
-                get { return "DTcms"; }
+                get { return "YTcms"; }
             }
             public int ProductType
             {

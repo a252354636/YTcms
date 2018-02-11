@@ -7,7 +7,7 @@ using System.Text;
 using YTcms.DBUtility;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     /// <summary>
     /// 数据访问类:会员积分日志表
@@ -39,7 +39,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Model.user_point_log model, bool is_upgrade)
+        public int Add(Dapper.Model.user_point_log model, bool is_upgrade)
         {
             using (SqlConnection conn = new SqlConnection(DbHelperSQL.connectionString))
             {
@@ -123,11 +123,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.user_point_log GetModel(int id)
+        public Dapper.Model.user_point_log GetModel(int id)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.user_point_log model = new Model.user_point_log();
+            Dapper.Model.user_point_log model = new Dapper.Model.user_point_log();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -210,9 +210,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 将对象转换实体
         /// </summary>
-        public Model.user_point_log DataRowToModel(DataRow row)
+        public Dapper.Model.user_point_log DataRowToModel(DataRow row)
         {
-            Model.user_point_log model = new Model.user_point_log();
+            Dapper.Model.user_point_log model = new Dapper.Model.user_point_log();
             if (row != null)
             {
                 //利用反射获得属性的所有公共属性

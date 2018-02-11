@@ -7,7 +7,7 @@ using System.Text;
 using YTcms.DBUtility;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     /// <summary>
     /// 数据访问类:管理员信息表
@@ -39,7 +39,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Model.manager model)
+        public int Add(Dapper.Model.manager model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();//数据字段
@@ -83,7 +83,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Model.manager model)
+        public bool Update(Dapper.Model.manager model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
@@ -128,11 +128,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.manager GetModel(int id)
+        public Dapper.Model.manager GetModel(int id)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.manager model = new Model.manager();
+            Dapper.Model.manager model = new Dapper.Model.manager();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -232,7 +232,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 根据用户名密码返回一个实体
         /// </summary>
-        public Model.manager GetModel(string user_name, string password)
+        public Dapper.Model.manager GetModel(string user_name, string password)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select id from " + databaseprefix + "manager");
@@ -254,9 +254,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 将对象转换实体
         /// </summary>
-        public Model.manager DataRowToModel(DataRow row)
+        public Dapper.Model.manager DataRowToModel(DataRow row)
         {
-            Model.manager model = new Model.manager();
+            Dapper.Model.manager model = new Dapper.Model.manager();
             if (row != null)
             {
                 //利用反射获得属性的所有公共属性

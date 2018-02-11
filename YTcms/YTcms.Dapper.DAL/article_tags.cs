@@ -7,7 +7,7 @@ using System.Text;
 using YTcms.DBUtility;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     /// <summary>
     /// 数据访问类:TAG标签
@@ -40,7 +40,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Model.article_tags model)
+        public int Add(Dapper.Model.article_tags model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();//数据字段
@@ -82,7 +82,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Model.article_tags model)
+        public bool Update(Dapper.Model.article_tags model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
@@ -141,11 +141,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.article_tags GetModel(int id)
+        public Dapper.Model.article_tags GetModel(int id)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.article_tags model = new Model.article_tags();
+            Dapper.Model.article_tags model = new Dapper.Model.article_tags();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -331,9 +331,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 将对象转换实体
         /// </summary>
-        public Model.article_tags DataRowToModel(DataRow row)
+        public Dapper.Model.article_tags DataRowToModel(DataRow row)
         {
-            Model.article_tags model = new Model.article_tags();
+            Dapper.Model.article_tags model = new Dapper.Model.article_tags();
             if (row != null)
             {
                 //利用反射获得属性的所有公共属性

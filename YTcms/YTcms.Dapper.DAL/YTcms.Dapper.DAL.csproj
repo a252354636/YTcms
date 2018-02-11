@@ -50,7 +50,6 @@
     <Compile Include="article_category.cs" />
     <Compile Include="article_comment.cs" />
     <Compile Include="article_tags.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="express.cs" />
     <Compile Include="mail_template.cs" />
     <Compile Include="manager.cs" />

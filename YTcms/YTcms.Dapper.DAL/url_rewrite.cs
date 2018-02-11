@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     public class url_rewrite
     {
@@ -13,7 +13,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 增加节点
         /// </summary>
-        public bool Add(Model.url_rewrite model)
+        public bool Add(Dapper.Model.url_rewrite model)
         {
             try
             {
@@ -39,7 +39,7 @@ namespace YTcms.Dapper.DAL
                 XmlNode newXn = xn.AppendChild(xe);
 
                 //创建子节点
-                foreach (Model.url_rewrite_item modelt in model.url_rewrite_items)
+                foreach (Dapper.Model.url_rewrite_item modelt in model.url_rewrite_items)
                 {
                     XmlElement xeItem = doc.CreateElement("item");
                     if (!string.IsNullOrEmpty(modelt.path))
@@ -63,7 +63,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 修改节点
         /// </summary>
-        public bool Edit(Model.url_rewrite model)
+        public bool Edit(Dapper.Model.url_rewrite model)
         {
             string filePath = Utils.GetXmlMapPath(DTKeys.FILE_URL_XML_CONFING);
             XmlDocument doc = new XmlDocument();
@@ -117,7 +117,7 @@ namespace YTcms.Dapper.DAL
                             }
                         }
                         //创建子节点
-                        foreach (Model.url_rewrite_item modelt in model.url_rewrite_items)
+                        foreach (Dapper.Model.url_rewrite_item modelt in model.url_rewrite_items)
                         {
                             XmlElement xeItem = doc.CreateElement("item");
                             if (!string.IsNullOrEmpty(modelt.path))
@@ -231,9 +231,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 取得节点配制信息
         /// </summary>
-        public Model.url_rewrite GetInfo(string attrValue)
+        public Dapper.Model.url_rewrite GetInfo(string attrValue)
         {
-            Model.url_rewrite model = new Model.url_rewrite();
+            Dapper.Model.url_rewrite model = new Dapper.Model.url_rewrite();
             string filePath = Utils.GetXmlMapPath(DTKeys.FILE_URL_XML_CONFING);
             XmlDocument doc = new XmlDocument();
             doc.Load(filePath);
@@ -260,12 +260,12 @@ namespace YTcms.Dapper.DAL
                         if (xe.Attributes["pagesize"] != null)
                             model.pagesize = xe.Attributes["pagesize"].Value;
                         //再次遍历子节点
-                        List<Model.url_rewrite_item> lsItems = new List<Model.url_rewrite_item>();
+                        List<Dapper.Model.url_rewrite_item> lsItems = new List<Dapper.Model.url_rewrite_item>();
                         foreach (XmlElement xe1 in xe.ChildNodes)
                         {
                             if (xe1.NodeType != XmlNodeType.Comment && xe1.Name.ToLower() == "item")
                             {
-                                Model.url_rewrite_item item = new Model.url_rewrite_item();
+                                Dapper.Model.url_rewrite_item item = new Dapper.Model.url_rewrite_item();
                                 if (xe1.Attributes["path"] != null)
                                     item.path = xe1.Attributes["path"].Value;
                                 if (xe1.Attributes["pattern"] != null)
@@ -289,12 +289,12 @@ namespace YTcms.Dapper.DAL
         public Hashtable GetList()
         {
             Hashtable ht = new Hashtable();
-            List<Model.url_rewrite> ls = GetList("");
-            foreach (Model.url_rewrite model in ls)
+            List<Dapper.Model.url_rewrite> ls = GetList("");
+            foreach (Dapper.Model.url_rewrite model in ls)
             {
                 if (!ht.Contains(model.name))
                 {
-                    foreach (Model.url_rewrite_item item in model.url_rewrite_items)
+                    foreach (Dapper.Model.url_rewrite_item item in model.url_rewrite_items)
                     {
                         item.querystring = item.querystring.Replace("^", "&");
                     }
@@ -307,9 +307,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 取得URL配制列表
         /// </summary>
-        public List<Model.url_rewrite> GetList(string channel)
+        public List<Dapper.Model.url_rewrite> GetList(string channel)
         {
-            List<Model.url_rewrite> ls = new List<Model.url_rewrite>();
+            List<Dapper.Model.url_rewrite> ls = new List<Dapper.Model.url_rewrite>();
             string filePath = Utils.GetXmlMapPath(DTKeys.FILE_URL_XML_CONFING);
             XmlDocument doc = new XmlDocument();
             doc.Load(filePath);
@@ -324,7 +324,7 @@ namespace YTcms.Dapper.DAL
                         {
                             if (xe.Attributes["channel"] != null && channel.ToLower() == xe.Attributes["channel"].Value.ToLower())
                             {
-                                Model.url_rewrite model = new Model.url_rewrite();
+                                Dapper.Model.url_rewrite model = new Dapper.Model.url_rewrite();
                                 if (xe.Attributes["name"] != null)
                                     model.name = xe.Attributes["name"].Value;
                                 if (xe.Attributes["type"] != null)
@@ -341,12 +341,12 @@ namespace YTcms.Dapper.DAL
                                     model.pagesize = xe.Attributes["pagesize"].Value;
                                 //再次遍历子节点
                                 StringBuilder urlRewriteString = new StringBuilder();
-                                List<Model.url_rewrite_item> lsItems = new List<Model.url_rewrite_item>();
+                                List<Dapper.Model.url_rewrite_item> lsItems = new List<Dapper.Model.url_rewrite_item>();
                                 foreach (XmlElement xe1 in xe.ChildNodes)
                                 {
                                     if (xe1.NodeType != XmlNodeType.Comment && xe1.Name.ToLower() == "item")
                                     {
-                                        Model.url_rewrite_item item = new Model.url_rewrite_item();
+                                        Dapper.Model.url_rewrite_item item = new Dapper.Model.url_rewrite_item();
                                         if (xe1.Attributes["path"] != null)
                                             item.path = xe1.Attributes["path"].Value;
                                         if (xe1.Attributes["pattern"] != null)
@@ -364,7 +364,7 @@ namespace YTcms.Dapper.DAL
                         }
                         else
                         {
-                            Model.url_rewrite model = new Model.url_rewrite();
+                            Dapper.Model.url_rewrite model = new Dapper.Model.url_rewrite();
                             if (xe.Attributes["name"] != null)
                                 model.name = xe.Attributes["name"].Value;
                             if (xe.Attributes["type"] != null)
@@ -381,12 +381,12 @@ namespace YTcms.Dapper.DAL
                                 model.pagesize = xe.Attributes["pagesize"].Value;
                             //再次遍历子节点
                             StringBuilder urlRewriteString = new StringBuilder();
-                            List<Model.url_rewrite_item> lsItems = new List<Model.url_rewrite_item>();
+                            List<Dapper.Model.url_rewrite_item> lsItems = new List<Dapper.Model.url_rewrite_item>();
                             foreach (XmlElement xe1 in xe.ChildNodes)
                             {
                                 if (xe1.NodeType != XmlNodeType.Comment && xe1.Name.ToLower() == "item")
                                 {
-                                    Model.url_rewrite_item item = new Model.url_rewrite_item();
+                                    Dapper.Model.url_rewrite_item item = new Dapper.Model.url_rewrite_item();
                                     if (xe1.Attributes["path"] != null)
                                         item.path = xe1.Attributes["path"].Value;
                                     if (xe1.Attributes["pattern"] != null)

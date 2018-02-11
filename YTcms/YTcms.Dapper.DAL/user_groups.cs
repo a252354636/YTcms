@@ -7,7 +7,7 @@ using System.Text;
 using YTcms.DBUtility;
 using YTcms.Common;
 
-namespace YTcms.Dapper.DAL
+namespace YTcms.DAL
 {
     /// <summary>
     /// 数据访问类:会员组别
@@ -39,7 +39,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Model.user_groups model)
+        public int Add(Dapper.Model.user_groups model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();//数据字段
@@ -81,7 +81,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Model.user_groups model)
+        public bool Update(Dapper.Model.user_groups model)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
@@ -140,11 +140,11 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Model.user_groups GetModel(int id)
+        public Dapper.Model.user_groups GetModel(int id)
         {
             StringBuilder strSql = new StringBuilder();
             StringBuilder str1 = new StringBuilder();
-            Model.user_groups model = new Model.user_groups();
+            Dapper.Model.user_groups model = new Dapper.Model.user_groups();
             //利用反射获得属性的所有公共属性
             PropertyInfo[] pros = model.GetType().GetProperties();
             foreach (PropertyInfo p in pros)
@@ -242,7 +242,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 取得默认组别实体
         /// </summary>
-        public Model.user_groups GetDefault()
+        public Dapper.Model.user_groups GetDefault()
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select top 1 * from " + databaseprefix + "user_groups");
@@ -262,7 +262,7 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 根据经验值返回升级的组别实体
         /// </summary>
-        public Model.user_groups GetUpgrade(int group_id, int exp)
+        public Dapper.Model.user_groups GetUpgrade(int group_id, int exp)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select top 1 * from " + databaseprefix + "user_groups");
@@ -283,9 +283,9 @@ namespace YTcms.Dapper.DAL
         /// <summary>
         /// 将对象转换实体
         /// </summary>
-        public Model.user_groups DataRowToModel(DataRow row)
+        public Dapper.Model.user_groups DataRowToModel(DataRow row)
         {
-            Model.user_groups model = new Model.user_groups();
+            Dapper.Model.user_groups model = new Dapper.Model.user_groups();
             if (row != null)
             {
                 //利用反射获得属性的所有公共属性
